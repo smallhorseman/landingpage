@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Studio 37</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+
+    <header class="bg-white shadow-md p-5 sticky top-0 z-50">
+        <nav class="container mx-auto flex justify-between items-center px-4">
+            <a href="index.html"><img src="logo.png" alt="Studio 37 Logo" class="h-12"></a>
+            <div class="hidden md:flex space-x-8">
+                <a href="services.html" class="text-gray-700 hover:text-gray-900 font-medium font-oswald transition-colors duration-200">Services</a>
+                <a href="packages.html" class="text-gray-700 hover:text-gray-900 font-medium font-oswald transition-colors duration-200">Packages</a>
+                <a href="portfolio.html" class="text-gray-700 hover:text-gray-900 font-medium font-oswald transition-colors duration-200">Portfolio</a>
+                <a href="about.html" class="text-gray-700 hover:text-gray-900 font-medium font-oswald transition-colors duration-200">About Us</a>
+                <a href="testimonials.html" class="text-gray-700 hover:text-gray-900 font-medium font-oswald transition-colors duration-200">Testimonials</a>
+                <a href="contact.html" class="text-gray-900 font-bold font-oswald transition-colors duration-200">Contact</a>
+            </div>
+            <button class="md:hidden text-gray-700 hover:text-gray-900 focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="contact" class="py-20 md:py-24 bg-neutral-100">
+            <div class="container mx-auto px-6 text-center max-w-4xl">
+                <h2 class="text-5xl font-bold text-gray-800 mb-10 text-center">Contact Us</h2>
+                <p class="text-xl text-gray-700 mb-10">
+                    Ready to create your cinematic memories? Reach out to us today!
+                </p>
+
+                <button id="getIdeasBtn" class="btn-polaroid mt-4 mb-10 mx-auto">✨ Get Photo Shoot Ideas</button>
+
+                <form action="#" method="POST" class="bg-white p-10 rounded-xl shadow-lg border border-gray-100 mb-12">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                        <div>
+                            <label for="name" class="block text-left text-gray-700 text-base font-medium mb-3">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="John Doe" class="w-full p-4 border border-gray-300 rounded-lg bg-gray-50 focus:ring-gray-700 focus:border-gray-700 transition-colors duration-200" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-left text-gray-700 text-base font-medium mb-3">Your Email</label>
+                            <input type="email" id="email" name="email" placeholder="john.doe@example.com" class="w-full p-4 border border-gray-300 rounded-lg bg-gray-50 focus:ring-gray-700 focus:border-gray-700 transition-colors duration-200" required>
+                        </div>
+                    </div>
+                    <div class="mb-8">
+                        <label for="service" class="block text-left text-gray-700 text-base font-medium mb-3">Service of Interest</label>
+                        <select id="service" name="service" class="w-full p-4 border border-gray-300 rounded-lg bg-gray-50 focus:ring-gray-700 focus:border-gray-700 transition-colors duration-200">
+                            <option value="">Select a service</option>
+                            <option value="portrait">Portrait Photography</option>
+                            <option value="wedding">Wedding Photography</option>
+                            <option value="event">Event Photography</option>
+                            <option value="product">Product Photography</option>
+                            <option value="real_estate">Real Estate Photography</option>
+                            <option value="commercial">Commercial Photography</option>
+                            <option value="mini_reel">Portrait: Mini Reel</option>
+                            <option value="feature_film">Portrait: Feature Film</option>
+                            <option value="epic_saga">Portrait: Epic Saga</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="mb-10">
+                        <label for="message" class="block text-left text-gray-700 text-base font-medium mb-3">Your Message</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Tell us about your photography needs, desired dates, or any special requests..." class="w-full p-4 border border-gray-300 rounded-lg bg-gray-50 focus:ring-gray-700 focus:border-gray-700 transition-colors duration-200" required></textarea>
+                    </div>
+                    <button type="submit" class="bg-gray-900 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 w-full md:w-auto px-12">Send Message</button>
+                </form>
+
+                <div class="mt-16 text-gray-700 text-xl font-medium">
+                    <p class="mb-3"><strong>Or book directly with our calendar:</strong></p>
+                    <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1AK0xPVwRHUV33msJW4Ja5BSmh9_eKh6YmHcCPsxrKg9T3jcvbTPSiVNjGYTLPR7SgUgS3OKNO?gv=true" style="border: 0; border-radius: 0.75rem; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);" width="100%" height="600" frameborder="0"></iframe>
+                </div>
+
+                <div class="mt-16 text-gray-700 text-xl font-medium">
+                    <p class="mb-3"><strong>Email:</strong> <a href="mailto:sales@studio37.cc" class="text-gray-800 hover:underline">sales@studio37.cc</a></p>
+                    <p class="mb-3"><strong>Phone:</strong> <a href="tel:+18327139944" class="text-gray-800 hover:underline">+1 (832) 713-9944</a></p>
+                    <p><strong>Address:</strong> 123 Reel Lane, Highlight City, CA 90210</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-10 rounded-t-3xl overflow-hidden shadow-inner">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mb-6 text-lg">&copy; 2025 Studio 37. All rights reserved.</p>
+            <div class="flex justify-center space-x-8">
+                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200" aria-label="Facebook"><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M14 12c0-1.1.9-2 2-2h3c.6 0 1-.4 1-1V5c0-.6-.4-1-1-1h-3c-3.31 0-6 2.69-6 6v10h12v-6h-3c-1.1 0-2-.9-2-2zM9 16V8c0-3.31-2.69-6-6-6H3c-.6 0-1 .4-1 1v10c0 .6.4 1 1 1h3c3.31 0 6-2.69 6-6z"></path></svg></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200" aria-label="Instagram"><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2zm-.2 2.75c-1.87 0-3.39 1.52-3.39 3.39v8.4c0 1.87 1.52 3.39 3.39 3.39h8.4c1.87 0 3.39-1.52 3.39-3.39V7.81c0-1.87-1.52-3.39-3.39-3.39zM12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zm0 4.9c-1.05 0-1.9-.85-1.9-1.9s.85-1.9 1.9-1.9 1.9.85 1.9 1.9-.85 1.9-1.9 1.9zm5.5-8.5c-.75 0-1.35.6-1.35 1.35s.6 1.35 1.35 1.35 1.35-.6 1.35-1.35-.6-1.35-1.35-1.35z"></path></svg></a>
+                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200" aria-label="Twitter"><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.37-.8.47-1.68.8-2.61.98-.76-.81-1.85-1.31-3.04-1.31-2.31 0-4.18 1.87-4.18 4.18 0 .33.04.65.11.95-3.48-.17-6.58-1.84-8.65-4.33-.36.62-.56 1.34-.56 2.1 0 1.45.74 2.73 1.88 3.48-.69-.02-1.34-.21-1.9-.52v.05c0 2.03 1.45 3.72 3.36 4.1-.35.1-.72.15-1.1.15-.27 0-.53-.03-.79-.08.53 1.66 2.07 2.87 3.89 2.91-1.46 1.14-3.31 1.83-5.32 1.83-.34 0-.68-.02-1.02-.06C4.46 20.35 6.63 21 8.93 21c10.7 0 16.55-8.85 16.55-16.55 0-.25-.01-.49-.02-.73.96-.69 1.79-1.56 2.45-2.55z"></path></svg></a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="ideasModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3 class="text-3xl font-bold text-gray-800 mb-6 font-oswald text-center">Get Your Photo Shoot Ideas ✨</h3>
+            <p class="text-gray-700 mb-4 text-center">Tell us what kind of shoot you're looking for:</p>
+            <textarea id="ideaInput" class="w-full p-4 border border-gray-300 rounded-lg bg-gray-50 mb-6" rows="4" placeholder="e.g., 'romantic couple shoot in a park', 'fun family photos with pets', 'creative headshots for an artist'"></textarea>
+            <button id="generateIdeasBtn" class="bg-gray-900 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 w-full">Generate Ideas</button>
+            <div id="loadingIndicator" class="loading-indicator">Generating ideas...</div>
+            <div id="ideasOutput" class="ai-output-area"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const getIdeasButton = document.getElementById('getIdeasBtn');
+            const ideasModal = document.getElementById('ideasModal');
+            const closeButton = ideasModal.querySelector('.close-button');
+            const ideaInput = document.getElementById('ideaInput');
+            const generateIdeasButton = document.getElementById('generateIdeasBtn');
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            const ideasOutput = document.getElementById('ideasOutput');
+
+            getIdeasButton.addEventListener('click', () => {
+                ideasModal.style.display = 'flex';
+                ideasOutput.textContent = '';
+                ideaInput.value = '';
+                loadingIndicator.style.display = 'none';
+            });
+
+            closeButton.addEventListener('click', () => {
+                ideasModal.style.display = 'none';
+            });
+
+            window.addEventListener('click', (event) => {
+                if (event.target == ideasModal) {
+                    ideasModal.style.display = 'none';
+                }
+            });
+
+            generateIdeasButton.addEventListener('click', async () => {
+                const userIdea = ideaInput.value.trim();
+                if (!userIdea) {
+                    ideasOutput.textContent = 'Please enter a brief description for your photo shoot idea.';
+                    return;
+                }
+
+                ideasOutput.textContent = '';
+                loadingIndicator.style.display = 'block';
+
+                try {
+                    const prompt = `Generate 3 creative and unique photography shoot ideas based on the following theme/keywords: "${userIdea}". For each idea, include a brief concept, potential location types, and a few prop suggestions. Format as a numbered list.`;
+                    let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
+                    const payload = { contents: chatHistory };
+                    const apiKey = ""; 
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        throw new Error(`API error: ${response.status} - ${errorData.error.message || 'Unknown error'}`);
+                    }
+
+                    const result = await response.json();
+
+                    if (result.candidates && result.candidates[0]?.content?.parts?.[0]) {
+                        const text = result.candidates[0].content.parts[0].text;
+                        ideasOutput.textContent = text;
+                    } else {
+                        ideasOutput.textContent = 'Could not generate ideas. Please try again.';
+                        console.error('Unexpected API response structure:', result);
+                    }
+                } catch (error) {
+                    ideasOutput.textContent = `Error: ${error.message}. Failed to generate ideas.`;
+                    console.error('Gemini API call failed:', error);
+                } finally {
+                    loadingIndicator.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
