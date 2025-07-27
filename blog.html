@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio 37 Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9f9f9;
+            color: #222;
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .section-title {
+            @apply text-5xl font-bold text-gray-800 mb-10 text-center;
+        }
+        .post-card {
+            @apply bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition-shadow duration-300 hover:shadow-xl;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white shadow-md p-5 sticky top-0 z-50">
+        <nav class="container mx-auto flex justify-between items-center px-4">
+            <a href="index.html">
+                <img src="https://live.staticflickr.com/65535/54682452016_5e3a5330ea_b.jpg" alt="Studio 37 Logo" class="h-12 w-auto">
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html#services" class="text-gray-700 hover:text-gray-900 font-medium font-oswald transition-colors duration-200">Services</a>
+                <a href="index.html#packages" class="text-gray-700 hover:text-gray-900 font-medium font-oswald transition-colors duration-200">Packages</a>
+                <a href="index.html#portfolio" class="text-gray-700 hover:text-gray-900 font-medium font-oswald transition-colors duration-200">Portfolio</a>
+                <a href="blog.html" class="text-gray-700 hover:text-gray-900 font-medium font-oswald transition-colors duration-200">Blog</a>
+                <a href="index.html#about" class="text-gray-700 hover:text-gray-900 font-medium font-oswald transition-colors duration-200">About Us</a>
+                <a href="index.html#testimonials" class="text-gray-700 hover:text-gray-900 font-medium font-oswald transition-colors duration-200">Testimonials</a>
+                <a href="index.html#contact" class="text-gray-700 hover:text-gray-900 font-medium font-oswald transition-colors duration-200">Contact</a>
+            </div>
+            <button class="md:hidden text-gray-700 hover:text-gray-900 focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+    </header>
+
+    <main class="py-20 md:py-24">
+        <div class="container mx-auto px-6">
+            <h1 class="section-title">Studio 37 Blog</h1>
+            <p class="text-center text-xl text-gray-600 max-w-3xl mx-auto mb-16">
+                Tips, stories, and insights from our latest shoots. Your guide to capturing perfect moments.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+                <div class="post-card">
+                    <img src="https://placehold.co/600x400/cccccc/333333?text=Blog+Image" alt="Blog Post 1" class="w-full h-56 object-cover rounded-md mb-6">
+                    <h2 class="text-3xl font-semibold text-gray-800 mb-3">5 Tips for a Perfect Golden Hour Photoshoot</h2>
+                    <p class="text-gray-500 text-sm mb-4">July 27, 2025</p>
+                    <p class="text-gray-600 text-lg mb-6">
+                        Discover the secrets to capturing breathtaking photos during the magical golden hour. From timing to location, we cover it all...
+                    </p>
+                    <a href="#" class="font-bold text-gray-800 hover:underline">Read More &rarr;</a>
+                </div>
+
+                <div class="post-card">
+                    <img src="https://placehold.co/600x400/cccccc/333333?text=Blog+Image" alt="Blog Post 2" class="w-full h-56 object-cover rounded-md mb-6">
+                    <h2 class="text-3xl font-semibold text-gray-800 mb-3">Choosing the Right Outfit for Your Family Portraits</h2>
+                    <p class="text-gray-500 text-sm mb-4">July 20, 2025</p>
+                    <p class="text-gray-600 text-lg mb-6">
+                        What you wear can make or break a photo. Here are our tried-and-true tips for coordinating outfits without looking too matched...
+                    </p>
+                    <a href="#" class="font-bold text-gray-800 hover:underline">Read More &rarr;</a>
+                </div>
+                
+                <div class="post-card">
+                    <img src="https://placehold.co/600x400/cccccc/333333?text=Blog+Image" alt="Blog Post 3" class="w-full h-56 object-cover rounded-md mb-6">
+                    <h2 class="text-3xl font-semibold text-gray-800 mb-3">A Look Behind the Scenes: A Wedding at Dawn</h2>
+                    <p class="text-gray-500 text-sm mb-4">July 15, 2025</p>
+                    <p class="text-gray-600 text-lg mb-6">
+                        Join us as we recount a beautiful wedding ceremony we had the honor of capturing as the sun rose over the hills...
+                    </p>
+                    <a href="#" class="font-bold text-gray-800 hover:underline">Read More &rarr;</a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-10 mt-16 rounded-t-3xl overflow-hidden shadow-inner">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Studio 37. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
