@@ -27,22 +27,6 @@
             background-attachment: fixed;
             min-height: 70vh; /* Make hero section taller */
         }
-        /* Updated btn-primary for general use, not the special CTA */
-        .btn-primary {
-            @apply bg-gray-900 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105;
-        }
-        .section-title {
-            @apply text-5xl font-bold text-gray-800 mb-10 text-center;
-        }
-        .card {
-            @apply bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition-shadow duration-300 hover:shadow-xl;
-        }
-        input[type="text"],
-        input[type="email"],
-        textarea,
-        select {
-            @apply w-full p-4 border border-gray-300 rounded-lg bg-gray-50 focus:ring-gray-700 focus:border-gray-700 transition-colors duration-200;
-        }
 
         /* Polaroid Style for image frames */
         .polaroid-frame {
@@ -109,22 +93,6 @@
                         0 0 25px 48px rgba(75, 0, 130, 0.6),
                         0 0 25px 56px rgba(143, 0, 255, 0.6);
             transform: rotate(var(--btn-rotate, 0deg)) scale(1.05); /* Apply scale with existing rotation */
-        }
-
-        .package-item {
-            @apply bg-white p-8 rounded-xl shadow-lg border border-gray-100 flex flex-col items-center text-center transition-transform duration-300 hover:scale-103;
-        }
-        .package-price {
-            @apply text-6xl font-bold text-gray-900 mb-4;
-        }
-        .package-duration {
-            @apply text-xl font-semibold text-gray-700 mb-3;
-        }
-        .package-details {
-            @apply text-lg text-gray-600 mb-6;
-        }
-        .polaroid-free-print {
-            @apply text-gray-500 text-base italic;
         }
 
         /* Modal Styles */
@@ -247,44 +215,44 @@
 
     <section id="services" class="py-20 md:py-24 bg-neutral-100">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="section-title">Our Photography Services</h2>
+            <h2 class="text-5xl font-bold text-gray-800 mb-10 text-center">Our Photography Services</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <div class="card">
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition-shadow duration-300 hover:shadow-xl">
                     <img src="https://placehold.co/350x250/333333/eeeeee?text=Portrait+Photography" alt="Portrait Photography" class="w-full h-56 object-cover rounded-md mb-6 shadow-sm">
                     <h3 class="text-3xl font-semibold text-gray-800 mb-3">Portrait Photography</h3>
                     <p class="text-gray-600 text-lg">
                         Capturing the essence of individuals and families with timeless and expressive portraits.
                     </p>
                 </div>
-                <div class="card">
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition-shadow duration-300 hover:shadow-xl">
                     <img src="https://placehold.co/350x250/333333/eeeeee?text=Wedding+Photography" alt="Wedding Photography" class="w-full h-56 object-cover rounded-md mb-6 shadow-sm">
                     <h3 class="text-3xl font-semibold text-gray-800 mb-3">Wedding Photography</h3>
                     <p class="text-gray-600 text-lg">
                         Documenting your special day with elegant and heartfelt imagery that lasts a lifetime.
                     </p>
                 </div>
-                <div class="card">
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition-shadow duration-300 hover:shadow-xl">
                     <img src="https://placehold.co/350x250/333333/eeeeee?text=Event+Photography" alt="Event Photography" class="w-full h-56 object-cover rounded-md mb-6 shadow-sm">
                     <h3 class="text-3xl font-semibold text-gray-800 mb-3">Event Photography</h3>
                     <p class="text-gray-600 text-lg">
                         Comprehensive coverage for corporate events, parties, and milestones, preserving every significant moment.
                     </p>
                 </div>
-                <div class="card">
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition-shadow duration-300 hover:shadow-xl">
                     <img src="https://placehold.co/350x250/333333/eeeeee?text=Product+Photography" alt="Product Photography" class="w-full h-56 object-cover rounded-md mb-6 shadow-sm">
                     <h3 class="text-3xl font-semibold text-gray-800 mb-3">Product Photography</h3>
                     <p class="text-gray-600 text-lg">
                         Showcasing your products with professional, high-quality images designed to attract customers.
                     </p>
                 </div>
-                <div class="card">
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition-shadow duration-300 hover:shadow-xl">
                     <img src="https://placehold.co/350x250/333333/eeeeee?text=Real+Estate+Photography" alt="Real Estate Photography" class="w-full h-56 object-cover rounded-md mb-6 shadow-sm">
                     <h3 class="text-3xl font-semibold text-gray-800 mb-3">Real Estate Photography</h3>
                     <p class="text-gray-600 text-lg">
                         Stunning visual tours and captivating photos to highlight properties and attract buyers.
                     </p>
                 </div>
-                <div class="card">
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition-shadow duration-300 hover:shadow-xl">
                     <img src="https://placehold.co/350x250/333333/eeeeee?text=Commercial+Photography" alt="Commercial Photography" class="w-full h-56 object-cover rounded-md mb-6 shadow-sm">
                     <h3 class="text-3xl font-semibold text-gray-800 mb-3">Commercial Photography</h3>
                     <p class="text-gray-600 text-lg">
@@ -297,32 +265,32 @@
 
     <section id="packages" class="py-20 md:py-24 bg-white">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="section-title">Our Portrait Packages</h2>
+            <h2 class="text-5xl font-bold text-gray-800 mb-10 text-center">Our Portrait Packages</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <div class="package-item">
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 flex flex-col items-center text-center transition-transform duration-300 hover:scale-103">
                     <h3 class="text-3xl font-bold text-gray-900 mb-3">Mini Reel</h3>
-                    <p class="package-price">$75</p>
-                    <p class="package-duration">15 Minutes</p>
-                    <p class="package-details">Includes 15 professionally edited digital photos</p>
-                    <p class="polaroid-free-print">PLUS: 1 Free Polaroid Print</p>
+                    <p class="text-6xl font-bold text-gray-900 mb-4">$75</p>
+                    <p class="text-xl font-semibold text-gray-700 mb-3">15 Minutes</p>
+                    <p class="text-lg text-gray-600 mb-6">Includes 15 professionally edited digital photos</p>
+                    <p class="text-gray-500 text-base italic">PLUS: 1 Free Polaroid Print</p>
                     <a href="#contact" class="btn-polaroid mt-6">Book Mini Reel</a>
                 </div>
 
-                <div class="package-item">
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 flex flex-col items-center text-center transition-transform duration-300 hover:scale-103">
                     <h3 class="text-3xl font-bold text-gray-900 mb-3">Feature Film</h3>
-                    <p class="package-price">$150</p>
-                    <p class="package-duration">30 Minutes</p>
-                    <p class="package-details">Includes 30 professionally edited digital photos</p>
-                    <p class="polaroid-free-print">PLUS: 1 Free Polaroid Print</p>
+                    <p class="text-6xl font-bold text-gray-900 mb-4">$150</p>
+                    <p class="text-xl font-semibold text-gray-700 mb-3">30 Minutes</p>
+                    <p class="text-lg text-gray-600 mb-6">Includes 30 professionally edited digital photos</p>
+                    <p class="text-gray-500 text-base italic">PLUS: 1 Free Polaroid Print</p>
                     <a href="#contact" class="btn-polaroid mt-6">Book Feature Film</a>
                 </div>
 
-                <div class="package-item">
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 flex flex-col items-center text-center transition-transform duration-300 hover:scale-103">
                     <h3 class="text-3xl font-bold text-gray-900 mb-3">Epic Saga</h3>
-                    <p class="package-price">$275</p>
-                    <p class="package-duration">60 Minutes</p>
-                    <p class="package-details">Includes 60 professionally edited digital photos</p>
-                    <p class="polaroid-free-print">PLUS: 1 Free Polaroid Print</p>
+                    <p class="text-6xl font-bold text-gray-900 mb-4">$275</p>
+                    <p class="text-xl font-semibold text-gray-700 mb-3">60 Minutes</p>
+                    <p class="text-lg text-gray-600 mb-6">Includes 60 professionally edited digital photos</p>
+                    <p class="text-gray-500 text-base italic">PLUS: 1 Free Polaroid Print</p>
                     <a href="#contact" class="btn-polaroid mt-6">Book Epic Saga</a>
                 </div>
             </div>
@@ -331,7 +299,7 @@
 
     <section id="portfolio" class="py-20 md:py-24 bg-neutral-100">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="section-title">Our Highlight Reel</h2>
+            <h2 class="text-5xl font-bold text-gray-800 mb-10 text-center">Our Highlight Reel</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-12">
                 <div class="polaroid-frame w-full h-64">
                     <img src="https://live.staticflickr.com/65535/54612989686_73e3eef7d8_b.jpg" onerror="this.onerror=null;this.src='https://placehold.co/400x300/a5b4fc/ffffff?text=Photo+1';" alt="Portfolio Image 1" class="w-full h-full object-cover rounded-lg">
@@ -358,13 +326,13 @@
                     <img src="https://live.staticflickr.com/65535/54612117427_87109c0069_b.jpg" onerror="this.onerror=null;this.src='https://placehold.co/400x300/7c3aed/ffffff?text=Photo+8';" alt="Portfolio Image 8" class="w-full h-full object-cover rounded-lg">
                 </div>
             </div>
-            <a href="#" class="btn-primary">View Full Portfolio</a>
+            <a href="#" class="bg-gray-900 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">View Full Portfolio</a>
         </div>
     </section>
 
     <section id="about" class="py-20 md:py-24 bg-neutral-100">
         <div class="container mx-auto px-6 text-center max-w-4xl">
-            <h2 class="section-title">About Studio 37</h2>
+            <h2 class="text-5xl font-bold text-gray-800 mb-10 text-center">About Studio 37</h2>
             <p class="text-xl text-gray-700 leading-relaxed mb-8">
                 At Studio 37, we are passionate storytellers, using the art of photography to encapsulate your most cherished moments. Our dedication to detail and personalized approach ensures that every frame beautifully reflects your unique narrative. We don't just take pictures; we craft visual legacies.
             </p>
@@ -376,23 +344,23 @@
 
     <section id="testimonials" class="py-20 md:py-24 bg-white">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="section-title">What Our Clients Say</h2>
+            <h2 class="text-5xl font-bold text-gray-800 mb-10 text-center">What Our Clients Say</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <div class="card text-left">
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition-shadow duration-300 hover:shadow-xl text-left">
                     <p class="text-gray-700 italic mb-5 text-lg">
                         "Working with Studio 37 was an absolute dream. They captured the true essence of our wedding day, delivering photos that felt like scenes from a movie. Professional, warm, and incredibly talented!"
                     </p>
                     <p class="font-bold text-gray-800 text-lg">- Sarah & Mark T.</p>
                     <p class="text-sm text-gray-500">Wedding Clients</p>
                 </div>
-                <div class="card text-left">
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition-shadow duration-300 hover:shadow-xl text-left">
                     <p class="text-gray-700 italic mb-5 text-lg">
                         "For our new product launch, Studio 37 delivered stunning, magazine-quality images that instantly elevated our brand. Their keen eye for detail and commitment to our vision was exceptional."
                     </p>
                     <p class="font-bold text-gray-800 text-lg">- Alex R.</p>
                     <p class="text-sm text-gray-500">E-commerce Founder</p>
                 </div>
-                <div class="card text-left">
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition-shadow duration-300 hover:shadow-xl text-left">
                     <p class="text-700 italic mb-5 text-lg">
                         "The family portrait session was so relaxed and fun, even with our energetic kids! Studio 37 created a 'highlight reel' of our family's joy that we will cherish forever. Simply the best!"
                     </p>
@@ -405,27 +373,27 @@
 
     <section id="contact" class="py-20 md:py-24 bg-neutral-100">
         <div class="container mx-auto px-6 text-center max-w-4xl">
-            <h2 class="section-title">Contact Us</h2>
+            <h2 class="text-5xl font-bold text-gray-800 mb-10 text-center">Contact Us</h2>
             <p class="text-xl text-gray-700 mb-10">
                 Ready to create your cinematic memories? Reach out to us today!
             </p>
 
             <button id="getIdeasBtn" class="btn-polaroid mt-4 mb-10 mx-auto">✨ Get Photo Shoot Ideas</button>
 
-            <form action="#" method="POST" class="bg-white p-10 rounded-xl shadow-lg border border-gray-100 mb-12">
+            <form id="contact-form" class="bg-white p-10 rounded-xl shadow-lg border border-gray-100 mb-12">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                     <div>
                         <label for="name" class="block text-left text-gray-700 text-base font-medium mb-3">Your Name</label>
-                        <input type="text" id="name" name="name" placeholder="John Doe" required>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required class="w-full p-4 border border-gray-300 rounded-lg bg-gray-50 focus:ring-gray-700 focus:border-gray-700 transition-colors duration-200">
                     </div>
                     <div>
                         <label for="email" class="block text-left text-gray-700 text-base font-medium mb-3">Your Email</label>
-                        <input type="email" id="email" name="email" placeholder="john.doe@example.com" required>
+                        <input type="email" id="email" name="email" placeholder="john.doe@example.com" required class="w-full p-4 border border-gray-300 rounded-lg bg-gray-50 focus:ring-gray-700 focus:border-gray-700 transition-colors duration-200">
                     </div>
                 </div>
                 <div class="mb-8">
                     <label for="service" class="block text-left text-gray-700 text-base font-medium mb-3">Service of Interest</label>
-                    <select id="service" name="service">
+                    <select id="service" name="service" class="w-full p-4 border border-gray-300 rounded-lg bg-gray-50 focus:ring-gray-700 focus:border-gray-700 transition-colors duration-200">
                         <option value="">Select a service</option>
                         <option value="portrait">Portrait Photography</option>
                         <option value="wedding">Wedding Photography</option>
@@ -441,9 +409,9 @@
                 </div>
                 <div class="mb-10">
                     <label for="message" class="block text-left text-gray-700 text-base font-medium mb-3">Your Message</label>
-                    <textarea id="message" name="message" rows="6" placeholder="Tell us about your photography needs, desired dates, or any special requests..." required></textarea>
+                    <textarea id="message" name="message" rows="6" placeholder="Tell us about your photography needs, desired dates, or any special requests..." required class="w-full p-4 border border-gray-300 rounded-lg bg-gray-50 focus:ring-gray-700 focus:border-gray-700 transition-colors duration-200"></textarea>
                 </div>
-                <button type="submit" class="btn-primary w-full md:w-auto px-12">Send Message</button>
+                <button type="submit" class="bg-gray-900 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 w-full md:w-auto px-12">Send Message</button>
             </form>
 
             <div class="mt-16 text-gray-700 text-xl font-medium">
@@ -482,7 +450,7 @@
             <h3 class="text-3xl font-bold text-gray-800 mb-6 font-oswald text-center">Get Your Photo Shoot Ideas ✨</h3>
             <p class="text-gray-700 mb-4 text-center">Tell us what kind of shoot you're looking for:</p>
             <textarea id="ideaInput" class="w-full p-4 border border-gray-300 rounded-lg bg-gray-50 mb-6" rows="4" placeholder="e.g., 'romantic couple shoot in a park', 'fun family photos with pets', 'creative headshots for an artist'"></textarea>
-            <button id="generateIdeasBtn" class="btn-primary w-full">Generate Ideas</button>
+            <button id="generateIdeasBtn" class="bg-gray-900 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 w-full">Generate Ideas</button>
             <div id="loadingIndicator" class="loading-indicator">Generating ideas...</div>
             <div id="ideasOutput" class="ai-output-area"></div>
         </div>
@@ -504,8 +472,39 @@
                 const rotation = (Math.random() * 6) - 3; // -3 to +3 degrees for buttons
                 button.style.setProperty('--btn-rotate', `${rotation}deg`);
             });
+            
+            // --- NEW: Contact Form Logic ---
+            const contactForm = document.getElementById('contact-form');
+            contactForm.addEventListener('submit', async (event) => {
+                event.preventDefault(); // Stop the form from submitting the traditional way
 
-            // AI Feature Logic
+                const formData = new FormData(contactForm);
+                const data = Object.fromEntries(formData.entries());
+
+                try {
+                    const response = await fetch('/.netlify/functions/submit-form', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(data),
+                    });
+
+                    const result = await response.json();
+
+                    if (response.ok) {
+                        alert(result.message); // Show success message
+                        contactForm.reset(); // Clear the form
+                    } else {
+                        throw new Error(result.message || 'An error occurred.');
+                    }
+                } catch (error) {
+                    alert('Error: ' + error.message);
+                }
+            });
+
+
+            // --- AI Feature Logic ---
             const getIdeasButton = document.getElementById('getIdeasBtn');
             const ideasModal = document.getElementById('ideasModal');
             const closeButton = ideasModal.querySelector('.close-button');
