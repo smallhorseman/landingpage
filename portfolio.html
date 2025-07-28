@@ -3,85 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Studio 37</title>
+    <title>Full Portfolio - Studio 37</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f9f9f9; color: #222; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.05em; }
+        .polaroid-frame { background-color: white; padding: 1rem; border-radius: 0.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: all 0.3s ease-in-out; }
+        .polaroid-frame:hover { transform: scale(1.05) rotate(var(--tw-rotate)); z-index: 10; box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+    </style>
 </head>
 <body class="antialiased">
 
     <header class="bg-white shadow-md p-5 sticky top-0 z-50">
         <nav class="container mx-auto flex justify-between items-center px-4">
-            <a href="index.html"><img src="logo.png" alt="Studio 37 Logo" class="h-12"></a>
-            <div class="hidden md:flex space-x-8">
-                <a href="services.html" class="text-gray-700 hover:text-gray-900 font-medium font-oswald transition-colors duration-200">Services</a>
-                <a href="packages.html" class="text-gray-700 hover:text-gray-900 font-medium font-oswald transition-colors duration-200">Packages</a>
-                <a href="portfolio.html" class="text-gray-900 font-bold font-oswald transition-colors duration-200">Portfolio</a>
-                <a href="about.html" class="text-gray-700 hover:text-gray-900 font-medium font-oswald transition-colors duration-200">About Us</a>
-                <a href="testimonials.html" class="text-gray-700 hover:text-gray-900 font-medium font-oswald transition-colors duration-200">Testimonials</a>
-                <a href="contact.html" class="text-gray-700 hover:text-gray-900 font-medium font-oswald transition-colors duration-200">Contact</a>
+            <a href="index.html">
+                <img src="https://live.staticflickr.com/65535/54682452016_5e3a5330ea_b.jpg" alt="Studio 37 Logo" class="h-12 w-auto">
+            </a>
+            <div>
+                <a href="index.html#contact" class="bg-gray-900 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">Book a Session</a>
             </div>
-            <button class="md:hidden text-gray-700 hover:text-gray-900 focus:outline-none">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
         </nav>
     </header>
 
-    <main>
-        <section id="portfolio" class="py-20 md:py-24 bg-neutral-100">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-5xl font-bold text-gray-800 mb-10 text-center">Our Highlight Reel</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-12">
-                    <div class="polaroid-frame w-full h-64">
-                        <img src="https://live.staticflickr.com/65535/54612989686_73e3eef7d8_b.jpg" onerror="this.onerror=null;this.src='https://placehold.co/400x300/a5b4fc/ffffff?text=Photo+1';" alt="Portfolio Image 1" class="w-full h-full object-cover rounded-lg">
-                    </div>
-                    <div class="polaroid-frame w-full h-64">
-                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1000&auto=format&fit=crop" onerror="this.onerror=null;this.src='https://placehold.co/400x300/818cf8/ffffff?text=Photo+2';" alt="Portfolio Image 2" class="w-full h-full object-cover rounded-lg">
-                    </div>
-                    <div class="polaroid-frame w-full h-64">
-                        <img src="https://live.staticflickr.com/65535/54612107482_d7ff8646ca_b.jpg" onerror="this.onerror=null;this.src='https://placehold.co/400x300/6366f1/ffffff?text=Photo+3';" alt="Portfolio Image 3" class="w-full h-full object-cover rounded-lg">
-                    </div>
-                    <div class="polaroid-frame w-full h-64">
-                        <img src="https://live.staticflickr.com/65535/54613203008_99c64a58c1_b.jpg" onerror="this.onerror=null;this.src='https://placehold.co/400x300/4f46e5/ffffff?text=Photo+4';" alt="Portfolio Image 4" class="w-full h-full object-cover rounded-lg">
-                    </div>
-                    <div class="polaroid-frame w-full h-64">
-                        <img src="https://live.staticflickr.com/65535/54613298815_459af65fed_b.jpg" onerror="this.onerror=null;this.src='https://placehold.co/400x300/3730a3/ffffff?text=Photo+5';" alt="Portfolio Image 5" class="w-full h-full object-cover rounded-lg">
-                    </div>
-                    <div class="polaroid-frame w-full h-64">
-                        <img src="https://live.staticflickr.com/65535/54613305255_cd284775d3_b.jpg" onerror="this.onerror=null;this.src='https://placehold.co/400x300/4338ca/ffffff?text=Photo+6';" alt="Portfolio Image 6" class="w-full h-full object-cover rounded-lg">
-                    </div>
-                    <div class="polaroid-frame w-full h-64">
-                        <img src="https://live.staticflickr.com/65535/54613214943_de95f9d125_b.jpg" onerror="this.onerror=null;this.src='https://placehold.co/400x300/6d28d9/ffffff?text=Photo+7';" alt="Portfolio Image 7" class="w-full h-full object-cover rounded-lg">
-                    </div>
-                    <div class="polaroid-frame w-full h-64">
-                        <img src="https://live.staticflickr.com/65535/54612117427_87109c0069_b.jpg" onerror="this.onerror=null;this.src='https://placehold.co/400x300/7c3aed/ffffff?text=Photo+8';" alt="Portfolio Image 8" class="w-full h-full object-cover rounded-lg">
-                    </div>
+    <main class="py-20 md:py-24">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl font-bold text-gray-800 mb-4">Our Full Portfolio</h1>
+            <p class="text-xl text-gray-600 mb-12">Thank you for unlocking our complete collection of work.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <div class="polaroid-frame"><img src="https://live.staticflickr.com/65535/54612989686_73e3eef7d8_b.jpg" alt="Portfolio Image 1" class="w-full h-full object-cover"></div>
+                <div class="polaroid-frame"><img src="https://images.unsplash.com/photo-1750852582524-4a372a98b965?w=1000" alt="Portfolio Image 2" class="w-full h-full object-cover"></div>
+                <div class="polaroid-frame"><img src="https://live.staticflickr.com/65535/54612107482_d7ff8646ca_b.jpg" alt="Portfolio Image 3" class="w-full h-full object-cover"></div>
+                <div class="polaroid-frame"><img src="https://live.staticflickr.com/65535/54613203008_99c64a58c1_b.jpg" alt="Portfolio Image 4" class="w-full h-full object-cover"></div>
+                <div class="polaroid-frame"><img src="https://live.staticflickr.com/65535/54613298815_459af65fed_b.jpg" alt="Portfolio Image 5" class="w-full h-full object-cover"></div>
+                <div class="polaroid-frame"><img src="https://live.staticflickr.com/65535/54613305255_cd284775d3_b.jpg" alt="Portfolio Image 6" class="w-full h-full object-cover"></div>
+                <div class="polaroid-frame"><img src="https://live.staticflickr.com/65535/54613214943_de95f9d125_b.jpg" alt="Portfolio Image 7" class="w-full h-full object-cover"></div>
+                <div class="polaroid-frame"><img src="https://live.staticflickr.com/65535/54612117427_87109c0069_b.jpg" alt="Portfolio Image 8" class="w-full h-full object-cover"></div>
                 </div>
-                <a href="#" class="bg-gray-900 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">View Full Portfolio</a>
-            </div>
-        </section>
+        </div>
     </main>
 
-    <footer class="bg-gray-900 text-white py-10 rounded-t-3xl overflow-hidden shadow-inner">
+    <footer class="bg-gray-900 text-white py-10 mt-16 rounded-t-3xl">
         <div class="container mx-auto px-6 text-center">
-            <p class="mb-6 text-lg">&copy; 2025 Studio 37. All rights reserved.</p>
-            <div class="flex justify-center space-x-8">
-                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200" aria-label="Facebook"><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M14 12c0-1.1.9-2 2-2h3c.6 0 1-.4 1-1V5c0-.6-.4-1-1-1h-3c-3.31 0-6 2.69-6 6v10h12v-6h-3c-1.1 0-2-.9-2-2zM9 16V8c0-3.31-2.69-6-6-6H3c-.6 0-1 .4-1 1v10c0 .6.4 1 1 1h3c3.31 0 6-2.69 6-6z"></path></svg></a>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200" aria-label="Instagram"><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2zm-.2 2.75c-1.87 0-3.39 1.52-3.39 3.39v8.4c0 1.87 1.52 3.39 3.39 3.39h8.4c1.87 0 3.39-1.52 3.39-3.39V7.81c0-1.87-1.52-3.39-3.39-3.39zM12 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zm0 4.9c-1.05 0-1.9-.85-1.9-1.9s.85-1.9 1.9-1.9 1.9.85 1.9 1.9-.85 1.9-1.9 1.9zm5.5-8.5c-.75 0-1.35.6-1.35 1.35s.6 1.35 1.35 1.35 1.35-.6 1.35-1.35-.6-1.35-1.35-1.35z"></path></svg></a>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors duration-200" aria-label="Twitter"><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.37-.8.47-1.68.8-2.61.98-.76-.81-1.85-1.31-3.04-1.31-2.31 0-4.18 1.87-4.18 4.18 0 .33.04.65.11.95-3.48-.17-6.58-1.84-8.65-4.33-.36.62-.56 1.34-.56 2.1 0 1.45.74 2.73 1.88 3.48-.69-.02-1.34-.21-1.9-.52v.05c0 2.03 1.45 3.72 3.36 4.1-.35.1-.72.15-1.1.15-.27 0-.53-.03-.79-.08.53 1.66 2.07 2.87 3.89 2.91-1.46 1.14-3.31 1.83-5.32 1.83-.34 0-.68-.02-1.02-.06C4.46 20.35 6.63 21 8.93 21c10.7 0 16.55-8.85 16.55-16.55 0-.25-.01-.49-.02-.73.96-.69 1.79-1.56 2.45-2.55z"></path></svg></a>
-            </div>
+            <p>&copy; 2025 Studio 37. All rights reserved.</p>
         </div>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const polaroidFrames = document.querySelectorAll('.polaroid-frame');
-            polaroidFrames.forEach(frame => {
-                const rotation = (Math.random() * 10) - 5;
-                frame.style.setProperty('--tw-rotate', `${rotation}deg`);
-            });
-        });
-    </script>
 
 </body>
 </html>
