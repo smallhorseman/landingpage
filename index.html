@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Studio 37 - Life's a Movie</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #f9f9f9; color: #222; line-height: 1.6; }
         h1, h2, h3, h4, h5, h6 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.05em; }
         .hero-background { background-image: url('https://live.staticflickr.com/65535/54612107482_d7ff8646ca_b.jpg'); background-size: cover; background-position: center; background-attachment: fixed; min-height: 70vh; }
-        .polaroid-frame { background-color: white; padding: 1rem; border-radius: 0.5rem; box-shadow: 0 4px Hc_eR8_Y_d7FF8646ca_b.jpg'); background-size: cover; background-position: center; background-attachment: fixed; min-height: 70vh; }
         .polaroid-frame { background-color: white; padding: 1rem; border-radius: 0.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: all 0.3s ease-in-out; cursor: pointer; }
         .polaroid-frame:hover { transform: scale(1.05) rotate(var(--tw-rotate, 0deg)); z-index: 10; box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
         .btn-polaroid { background-color: white; color: #222; font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.05em; padding: 1rem 2rem; border-radius: 0.5rem; box-shadow: 0 8px 20px rgba(0,0,0,0.25); transition: all 0.3s ease-in-out; font-weight: bold; display: inline-block; text-decoration: none; transform: rotate(var(--btn-rotate, 0deg)); }
@@ -43,6 +44,7 @@
         </nav>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero-background text-white flex items-center justify-center text-center rounded-b-3xl overflow-hidden shadow-2xl relative">
         <div class="container mx-auto px-6 py-20 relative z-10">
             <h1 class="text-6xl md:text-8xl font-extrabold mb-4 drop-shadow-xl">Studio 37</h1>
@@ -52,21 +54,74 @@
         <div class="absolute inset-0 bg-black opacity-50"></div>
     </section>
 
-    <section id="services" class="py-20 md:py-24 bg-neutral-100">...</section>
-    <section id="packages" class="py-20 md:py-24 bg-white">...</section>
+    <!-- Services Section -->
+    <section id="services" class="py-20 md:py-24 bg-neutral-100">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-5xl font-bold text-gray-800 mb-10 text-center">Our Photography Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition-shadow duration-300 hover:shadow-xl">
+                    <img src="https://placehold.co/350x250/333333/eeeeee?text=Portrait+Photography" alt="Portrait Photography" class="w-full h-56 object-cover rounded-md mb-6 shadow-sm">
+                    <h3 class="text-3xl font-semibold text-gray-800 mb-3">Portrait Photography</h3>
+                    <p class="text-gray-600 text-lg">Capturing the essence of individuals and families with timeless and expressive portraits.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition-shadow duration-300 hover:shadow-xl">
+                    <img src="https://placehold.co/350x250/333333/eeeeee?text=Wedding+Photography" alt="Wedding Photography" class="w-full h-56 object-cover rounded-md mb-6 shadow-sm">
+                    <h3 class="text-3xl font-semibold text-gray-800 mb-3">Wedding Photography</h3>
+                    <p class="text-gray-600 text-lg">Documenting your special day with elegant and heartfelt imagery that lasts a lifetime.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition-shadow duration-300 hover:shadow-xl">
+                    <img src="https://placehold.co/350x250/333333/eeeeee?text=Event+Photography" alt="Event Photography" class="w-full h-56 object-cover rounded-md mb-6 shadow-sm">
+                    <h3 class="text-3xl font-semibold text-gray-800 mb-3">Event Photography</h3>
+                    <p class="text-gray-600 text-lg">Comprehensive coverage for corporate events, parties, and milestones, preserving every significant moment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section id="packages" class="py-20 md:py-24 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-5xl font-bold text-gray-800 mb-10 text-center">Our Portrait Packages</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 flex flex-col items-center text-center transition-transform duration-300 hover:scale-103">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-3">Mini Reel</h3>
+                    <p class="text-6xl font-bold text-gray-900 mb-4">$75</p>
+                    <p class="text-xl font-semibold text-gray-700 mb-3">15 Minutes</p>
+                    <p class="text-lg text-gray-600 mb-6">Includes 15 professionally edited digital photos</p>
+                    <p class="text-gray-500 text-base italic">PLUS: 1 Free Polaroid Print</p>
+                    <a href="#contact" class="btn-polaroid mt-6">Book Mini Reel</a>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 flex flex-col items-center text-center transition-transform duration-300 hover:scale-103">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-3">Feature Film</h3>
+                    <p class="text-6xl font-bold text-gray-900 mb-4">$150</p>
+                    <p class="text-xl font-semibold text-gray-700 mb-3">30 Minutes</p>
+                    <p class="text-lg text-gray-600 mb-6">Includes 30 professionally edited digital photos</p>
+                    <p class="text-gray-500 text-base italic">PLUS: 1 Free Polaroid Print</p>
+                    <a href="#contact" class="btn-polaroid mt-6">Book Feature Film</a>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 flex flex-col items-center text-center transition-transform duration-300 hover:scale-103">
+                    <h3 class="text-3xl font-bold text-gray-900 mb-3">Epic Saga</h3>
+                    <p class="text-6xl font-bold text-gray-900 mb-4">$275</p>
+                    <p class="text-xl font-semibold text-gray-700 mb-3">60 Minutes</p>
+                    <p class="text-lg text-gray-600 mb-6">Includes 60 professionally edited digital photos</p>
+                    <p class="text-gray-500 text-base italic">PLUS: 1 Free Polaroid Print</p>
+                    <a href="#contact" class="btn-polaroid mt-6">Book Epic Saga</a>
+                </div>
+            </div>
+        </div>
+    </section>
     
+    <!-- Portfolio Section -->
     <section id="portfolio" class="py-20 md:py-24 bg-neutral-100">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-5xl font-bold text-gray-800 mb-4">A Glimpse of Our Work</h2>
             <p class="text-xl text-gray-600 mb-12">Here are a few of our favorite shots. Want to see more?</p>
-            
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
                 <img src="https://live.staticflickr.com/65535/54612989686_73e3eef7d8_b.jpg" alt="Portfolio Image 1" class="w-full h-auto object-cover rounded-lg shadow-md">
                 <img src="https://live.staticflickr.com/65535/54612107482_d7ff8646ca_b.jpg" alt="Portfolio Image 3" class="w-full h-auto object-cover rounded-lg shadow-md">
                 <img src="https://live.staticflickr.com/65535/54613203008_99c64a58c1_b.jpg" alt="Portfolio Image 4" class="w-full h-auto object-cover rounded-lg shadow-md">
                 <img src="https://live.staticflickr.com/65535/54613298815_459af65fed_b.jpg" alt="Portfolio Image 5" class="w-full h-auto object-cover rounded-lg shadow-md">
             </div>
-
             <div class="max-w-2xl mx-auto bg-white p-8 sm:p-10 rounded-xl shadow-2xl border">
                 <h3 class="text-3xl font-bold text-gray-800 mb-3">Unlock Our Full Portfolio</h3>
                 <p class="text-gray-600 mb-6">Enter your details to see our complete gallery and receive a <strong class="text-amber-500">10% OFF coupon</strong> for your first session!</p>
@@ -80,57 +135,196 @@
         </div>
     </section>
 
-    <section id="about" class="py-20 md:py-24 bg-white">...</section>
-    <section id="testimonials" class="py-20 md:py-24 bg-neutral-100">...</section>
+    <!-- About Section -->
+    <section id="about" class="py-20 md:py-24 bg-white">
+        <div class="container mx-auto px-6 text-center max-w-4xl">
+            <h2 class="text-5xl font-bold text-gray-800 mb-10 text-center">About Studio 37</h2>
+            <p class="text-xl text-gray-700 leading-relaxed mb-8">At Studio 37, we are passionate storytellers, using the art of photography to encapsulate your most cherished moments. Our dedication to detail and personalized approach ensures that every frame beautifully reflects your unique narrative. We don't just take pictures; we craft visual legacies.</p>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 md:py-24 bg-neutral-100">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-5xl font-bold text-gray-800 mb-10 text-center">What Our Clients Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition-shadow duration-300 hover:shadow-xl text-left">
+                    <p class="text-gray-700 italic mb-5 text-lg">"Working with Studio 37 was an absolute dream. They captured the true essence of our wedding day, delivering photos that felt like scenes from a movie. Professional, warm, and incredibly talented!"</p>
+                    <p class="font-bold text-gray-800 text-lg">- Sarah & Mark T.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition-shadow duration-300 hover:shadow-xl text-left">
+                    <p class="text-gray-700 italic mb-5 text-lg">"For our new product launch, Studio 37 delivered stunning, magazine-quality images that instantly elevated our brand. Their keen eye for detail and commitment to our vision was exceptional."</p>
+                    <p class="font-bold text-gray-800 text-lg">- Alex R.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition-shadow duration-300 hover:shadow-xl text-left">
+                    <p class="text-gray-700 italic mb-5 text-lg">"The family portrait session was so relaxed and fun, even with our energetic kids! Studio 37 created a 'highlight reel' of our family's joy that we will cherish forever. Simply the best!"</p>
+                    <p class="font-bold text-gray-800 text-lg">- The Rodriguez Family</p>
+                </div>
+            </div>
+        </div>
+    </section>
     
-    <section id="contact" class="py-20 md:py-24 bg-white">...</section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 md:py-24 bg-white">
+        <div class="container mx-auto px-6 text-center max-w-4xl">
+            <h2 class="text-5xl font-bold text-gray-800 mb-10 text-center">Contact Us</h2>
+            <p class="text-xl text-gray-700 mb-10">Ready to create your cinematic memories? Reach out to us today!</p>
+            <button id="getIdeasBtn" class="btn-polaroid mt-4 mb-10 mx-auto">✨ Get Photo Shoot Ideas</button>
+            <form id="contact-form" class="bg-white p-10 rounded-xl shadow-lg border border-gray-100 mb-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <label for="name" class="block text-left text-gray-700 text-base font-medium mb-3">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required class="w-full p-4 border border-gray-300 rounded-lg bg-gray-50">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-left text-gray-700 text-base font-medium mb-3">Your Email</label>
+                        <input type="email" id="email" name="email" placeholder="john.doe@example.com" required class="w-full p-4 border border-gray-300 rounded-lg bg-gray-50">
+                    </div>
+                </div>
+                <div class="mb-8">
+                    <label for="service" class="block text-left text-gray-700 text-base font-medium mb-3">Service of Interest</label>
+                    <select id="service" name="service" class="w-full p-4 border border-gray-300 rounded-lg bg-gray-50">
+                        <option value="">Select a service</option>
+                        <option value="portrait">Portrait Photography</option>
+                        <option value="wedding">Wedding Photography</option>
+                    </select>
+                </div>
+                <div class="mb-10">
+                    <label for="message" class="block text-left text-gray-700 text-base font-medium mb-3">Your Message</label>
+                    <textarea id="message" name="message" rows="6" placeholder="Tell us about your photography needs..." required class="w-full p-4 border border-gray-300 rounded-lg bg-gray-50"></textarea>
+                </div>
+                <button type="submit" class="bg-gray-900 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 w-full md:w-auto px-12">Send Message</button>
+            </form>
+            <div class="mt-16 text-gray-700 text-xl font-medium">
+                <p class="mb-3"><strong>Or book directly with our calendar:</strong></p>
+                <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1AK0xPVwRHUV33msJW4Ja5BSmh9_eKh6YmHcCPsxrKg9T3jcvbTPSiVNjGYTLPR7SgUgS3OKNO?gv=true" style="border: 0; border-radius: 0.75rem; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);" width="100%" height="600" frameborder="0"></iframe>
+            </div>
+        </div>
+    </section>
 
-    <footer class="bg-gray-900 text-white py-10 rounded-t-3xl">...</footer>
+    <footer class="bg-gray-900 text-white py-10 rounded-t-3xl">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mb-6 text-lg">&copy; 2025 Studio 37. All rights reserved.</p>
+        </div>
+    </footer>
 
-    <div id="ideasModal" class="modal">...</div>
+    <!-- AI Ideas Modal -->
+    <div id="ideasModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3 class="text-3xl font-bold text-gray-800 mb-6 text-center">Get Your Photo Shoot Ideas ✨</h3>
+            <p class="text-gray-700 mb-4 text-center">Tell us what kind of shoot you're looking for:</p>
+            <textarea id="ideaInput" class="w-full p-4 border border-gray-300 rounded-lg bg-gray-50 mb-6" rows="4" placeholder="e.g., 'romantic couple shoot in a park'"></textarea>
+            <button id="generateIdeasBtn" class="w-full bg-gray-900 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-full shadow-lg">Generate Ideas</button>
+            <div id="loadingIndicator" class="loading-indicator">Generating ideas...</div>
+            <div id="ideasOutput" class="ai-output-area"></div>
+        </div>
+    </div>
 
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Rotations for polaroids and buttons...
-            // ...
+            // --- EVENT LISTENERS AND SETUP ---
 
-            // --- Contact Form Logic ---
+            // Apply random rotation to polaroid-style elements
+            document.querySelectorAll('.polaroid-frame, .btn-polaroid').forEach(el => {
+                const isButton = el.classList.contains('btn-polaroid');
+                const maxRotation = isButton ? 3 : 5;
+                const rotation = (Math.random() * (maxRotation * 2)) - maxRotation;
+                const rotationVar = isButton ? '--btn-rotate' : '--tw-rotate';
+                el.style.setProperty(rotationVar, `${rotation}deg`);
+            });
+
+            // --- FORM HANDLERS ---
+
+            // Contact Form
             const contactForm = document.getElementById('contact-form');
-            contactForm.addEventListener('submit', async (event) => {
-                event.preventDefault();
-                const formData = new FormData(contactForm);
-                const data = Object.fromEntries(formData.entries());
-                try {
-                    const response = await fetch('/.netlify/functions/submit-form', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
-                    const result = await response.json();
-                    if (response.ok) {
+            if(contactForm) {
+                contactForm.addEventListener('submit', async (event) => {
+                    event.preventDefault();
+                    const formData = new FormData(contactForm);
+                    const data = Object.fromEntries(formData.entries());
+                    try {
+                        const response = await fetch('/.netlify/functions/submit-form', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+                        const result = await response.json();
+                        if (!response.ok) throw new Error(result.message);
                         alert(result.message);
                         contactForm.reset();
-                    } else { throw new Error(result.message); }
-                } catch (error) { alert('Error: ' + error.message); }
-            });
-
-            // --- NEW: Portfolio Unlock Form Logic ---
-            const portfolioUnlockForm = document.getElementById('portfolio-unlock-form');
-            portfolioUnlockForm.addEventListener('submit', async (event) => {
-                event.preventDefault();
-                const formData = new FormData(portfolioUnlockForm);
-                const data = Object.fromEntries(formData.entries());
-                try {
-                    const response = await fetch('/.netlify/functions/unlock-portfolio', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
-                    if (response.ok) {
-                        // On success, redirect to the full portfolio page
-                        window.location.href = 'portfolio.html';
-                    } else {
-                        const result = await response.json();
-                        throw new Error(result.message || 'An error occurred.');
+                    } catch (error) {
+                        alert('Error: ' + error.message);
                     }
-                } catch (error) { alert('Error: ' + error.message); }
-            });
+                });
+            }
 
-            // AI Ideas Modal Logic...
-            // ...
+            // Portfolio Unlock Form
+            const portfolioUnlockForm = document.getElementById('portfolio-unlock-form');
+            if(portfolioUnlockForm) {
+                portfolioUnlockForm.addEventListener('submit', async (event) => {
+                    event.preventDefault();
+                    const formData = new FormData(portfolioUnlockForm);
+                    const data = Object.fromEntries(formData.entries());
+                    try {
+                        const response = await fetch('/.netlify/functions/unlock-portfolio', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+                        if (response.ok) {
+                            window.location.href = 'portfolio.html';
+                        } else {
+                            const result = await response.json();
+                            throw new Error(result.message || 'An error occurred.');
+                        }
+                    } catch (error) {
+                        alert('Error: ' + error.message);
+                    }
+                });
+            }
+
+            // --- AI IDEAS MODAL LOGIC ---
+            const getIdeasButton = document.getElementById('getIdeasBtn');
+            const ideasModal = document.getElementById('ideasModal');
+            const closeButton = ideasModal.querySelector('.close-button');
+            const ideaInput = document.getElementById('ideaInput');
+            const generateIdeasButton = document.getElementById('generateIdeasBtn');
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            const ideasOutput = document.getElementById('ideasOutput');
+
+            const openModal = () => {
+                ideasModal.style.display = 'flex';
+                ideasOutput.textContent = '';
+                ideaInput.value = '';
+                loadingIndicator.style.display = 'none';
+            };
+            const closeModal = () => { ideasModal.style.display = 'none'; };
+
+            getIdeasButton.addEventListener('click', openModal);
+            closeButton.addEventListener('click', closeModal);
+            window.addEventListener('click', (event) => { if (event.target == ideasModal) closeModal(); });
+
+            generateIdeasButton.addEventListener('click', async () => {
+                const userIdea = ideaInput.value.trim();
+                if (!userIdea) {
+                    ideasOutput.textContent = 'Please enter a brief description for your photo shoot idea.';
+                    return;
+                }
+
+                ideasOutput.textContent = '';
+                loadingIndicator.style.display = 'block';
+
+                try {
+                    const response = await fetch('/.netlify/functions/generate-ideas', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ userIdea: userIdea })
+                    });
+
+                    const result = await response.json();
+                    if (!response.ok) throw new Error(result.message || 'Failed to generate ideas.');
+                    ideasOutput.textContent = result.ideas;
+
+                } catch (error) {
+                    ideasOutput.textContent = `Error: ${error.message}`;
+                } finally {
+                    loadingIndicator.style.display = 'none';
+                }
+            });
         });
     </script>
 
