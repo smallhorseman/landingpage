@@ -35,6 +35,7 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 9999px; /* rounded-full */
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
     transition: all 0.3s ease-in-out;
+    text-decoration: none;
 }
 
 .btn-primary:hover {
@@ -60,7 +61,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: rotate(var(--btn-rotate, 0deg));
 }
 
-/* === THIS IS THE CORRECTED RAINBOW EFFECT === */
+/* Full Rainbow Hover Effect */
 .btn-polaroid:hover {
     box-shadow: 0 0 25px 8px rgba(255, 0, 0, 0.6), /* Red */
                  0 0 25px 16px rgba(255, 127, 0, 0.6), /* Orange */
