@@ -25,8 +25,6 @@ h1, h2, h3, h4, h5, h6 {
     min-height: 70vh;
 }
 
-/* === RESTORED BUTTON STYLES === */
-
 /* Standard Button Style */
 .btn-primary {
     display: inline-block;
@@ -62,8 +60,15 @@ h1, h2, h3, h4, h5, h6 {
     transform: rotate(var(--btn-rotate, 0deg));
 }
 
+/* === THIS IS THE CORRECTED RAINBOW EFFECT === */
 .btn-polaroid:hover {
-    box-shadow: 0 0 25px 8px rgba(255, 165, 0, 0.6), 0 0 25px 16px rgba(255, 255, 0, 0.6);
+    box-shadow: 0 0 25px 8px rgba(255, 0, 0, 0.6), /* Red */
+                 0 0 25px 16px rgba(255, 127, 0, 0.6), /* Orange */
+                 0 0 25px 24px rgba(255, 255, 0, 0.6), /* Yellow */
+                 0 0 25px 32px rgba(0, 255, 0, 0.6), /* Green */
+                 0 0 25px 40px rgba(0, 0, 255, 0.6), /* Blue */
+                 0 0 25px 48px rgba(75, 0, 130, 0.6), /* Indigo */
+                 0 0 25px 56px rgba(143, 0, 255, 0.6); /* Violet */
     transform: rotate(var(--btn-rotate, 0deg)) scale(1.05);
 }
 
