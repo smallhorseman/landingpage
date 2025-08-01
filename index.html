@@ -54,7 +54,7 @@
                     <p>High-impact imagery for real estate, commercial content, and small business branding.</p>
                 </div>
             </div>
-            <a href="services.html" class="btn-primary">Explore All Services</a>
+            <a href="services.html" class="btn-polaroid">Explore All Services</a>
         </section>
 
         <section class="text-center py-16 bg-neutral-100 rounded-2xl my-16">
@@ -67,7 +67,7 @@
                     <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 border border-gray-300 rounded-lg">
                     <input type="email" name="email" placeholder="Your Email Address" required class="w-full p-3 border border-gray-300 rounded-lg">
                     <input type="tel" name="phone" placeholder="Phone Number" required class="w-full p-3 border border-gray-300 rounded-lg">
-                    <button type="submit" class="btn-primary w-full">Unlock Now & Get Coupon</button>
+                    <button type="submit" class="btn-polaroid w-full">Unlock Now & Get Coupon</button>
                 </form>
             </div>
         </section>
@@ -83,22 +83,9 @@
                         <p class="text-gray-600 text-sm">Discover our top tips for selecting outfits that will make your photos shine.</p>
                     </div>
                 </div>
-                <div class="post-card">
-                    <a href="post2.html"><img src="https://placehold.co/600x400/e2e8f0/4a5568?text=Location+Scouting" class="w-full h-48 object-cover"></a>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2"><a href="post2.html" class="hover:text-amber-600">Choosing the Perfect Location</a></h3>
-                        <p class="text-gray-600 text-sm">How to find a backdrop that perfectly matches the mood and style of your shoot.</p>
-                    </div>
-                </div>
-                <div class="post-card">
-                    <a href="post3.html"><img src="https://placehold.co/600x400/e2e8f0/4a5568?text=Posing+Guide" class="w-full h-48 object-cover"></a>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2"><a href="post3.html" class="hover:text-amber-600">Posing Tips for Camera-Shy People</a></h3>
-                        <p class="text-gray-600 text-sm">Feel confident and look natural with these simple posing techniques.</p>
-                    </div>
-                </div>
+                <!-- Other blog post previews -->
             </div>
-            <a href="blog.html" class="btn-primary">Read More Articles</a>
+            <a href="blog.html" class="btn-polaroid">Read More Articles</a>
         </section>
     </main>
 
@@ -108,44 +95,6 @@
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const portfolioUnlockForm = document.getElementById('portfolio-unlock-form');
-            if(portfolioUnlockForm) {
-                portfolioUnlockForm.addEventListener('submit', async (event) => {
-                    event.preventDefault();
-                    const submitButton = portfolioUnlockForm.querySelector('button[type="submit"]');
-                    submitButton.disabled = true;
-                    submitButton.textContent = 'Unlocking...';
-
-                    const formData = new FormData(portfolioUnlockForm);
-                    const data = Object.fromEntries(formData.entries());
-                    try {
-                        const response = await fetch('/.netlify/functions/unlock-portfolio', { 
-                            method: 'POST', 
-                            headers: { 'Content-Type': 'application/json' }, 
-                            body: JSON.stringify(data) 
-                        });
-                        if (response.ok) {
-                            window.location.href = 'portfolio.html';
-                        } else {
-                            const result = await response.json();
-                            throw new Error(result.message || 'An error occurred.');
-                        }
-                    } catch (error) {
-                        alert('Error: ' + error.message);
-                        submitButton.disabled = false;
-                        submitButton.textContent = 'Unlock Now & Get Coupon';
-                    }
-                });
-            }
-            
-            // Add rotation to polaroid buttons
-            document.querySelectorAll('.btn-polaroid').forEach(button => {
-                const rotation = (Math.random() * 6) - 3; // -3 to +3 degrees
-                button.style.setProperty('--btn-rotate', `${rotation}deg`);
-            });
-        });
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>
