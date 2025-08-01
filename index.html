@@ -4,16 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Studio 37 - Life's a Movie</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #f9f9f9; color: #222; line-height: 1.6; }
+        body { font-family: 'Inter', sans-serif; background-color: #f9f9f9; color: #222; }
         h1, h2, h3, h4, h5, h6 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.05em; }
         .hero-background { background-image: url('https://live.staticflickr.com/65535/54612107482_d7ff8646ca_b.jpg'); background-size: cover; background-position: center; background-attachment: fixed; min-height: 70vh; }
-        .btn-polaroid { background-color: white; color: #222; font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.05em; padding: 1rem 2rem; border-radius: 0.5rem; box-shadow: 0 8px 20px rgba(0,0,0,0.25); transition: all 0.3s ease-in-out; font-weight: bold; display: inline-block; text-decoration: none; transform: rotate(var(--btn-rotate, 0deg)); }
-        .btn-polaroid:hover { box-shadow: 0 0 25px 8px rgba(255,165,0,0.6), 0 0 25px 16px rgba(255,255,0,0.6); transform: rotate(var(--btn-rotate, 0deg)) scale(1.05); }
+        /* Modal Styles */
         .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.7); display: flex; justify-content: center; align-items: center; }
         .modal-content { background-color: #fefefe; margin: auto; padding: 30px; border-radius: 1rem; width: 90%; max-width: 600px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); position: relative; }
         .close-button { color: #aaa; position: absolute; top: 15px; right: 25px; font-size: 28px; font-weight: bold; cursor: pointer; }
@@ -21,7 +18,7 @@
         .loading-indicator { display: none; text-align: center; margin-top: 20px; }
         .loading-indicator::before { content: ''; display: inline-block; width: 20px; height: 20px; border: 3px solid #ccc; border-top-color: #333; border-radius: 50%; animation: spin 1s linear infinite; vertical-align: middle; margin-right: 10px; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        .ai-output-area { margin-top: 20px; padding: 15px; background-color: #f0f0f0; border-radius: 0.5rem; white-space: pre-wrap; text-align: left; }
+        .ai-output-area { margin-top: 20px; padding: 15px; background-color: #f0f0f0; border-radius: 0.5rem; white-space: pre-wrap; text-align: left; max-height: 40vh; overflow-y: auto;}
     </style>
 </head>
 <body class="antialiased">
@@ -35,10 +32,8 @@
                 <a href="portfolio.html" class="text-gray-700 hover:text-gray-900 font-medium font-oswald">Portfolio</a>
                 <a href="blog.html" class="text-gray-700 hover:text-gray-900 font-medium font-oswald">Blog</a>
                 <a href="about.html" class="text-gray-700 hover:text-gray-900 font-medium font-oswald">About Us</a>
-                <a href="testimonials.html" class="text-gray-700 hover:text-gray-900 font-medium font-oswald">Testimonials</a>
                 <a href="contact.html" class="text-gray-700 hover:text-gray-900 font-medium font-oswald">Contact</a>
             </div>
-            <button class="md:hidden text-gray-700 focus:outline-none"><!-- Mobile menu icon --></button>
         </nav>
     </header>
 
@@ -47,43 +42,76 @@
         <div class="container mx-auto px-6 py-20 relative z-10">
             <h1 class="text-6xl md:text-8xl font-extrabold mb-4 drop-shadow-xl">Studio 37</h1>
             <p class="text-2xl md:text-3xl mb-8 max-w-3xl mx-auto font-medium italic drop-shadow-lg">life's a movie, let us capture your highlight reel</p>
-            <a href="contact.html" class="btn-polaroid">Book Your Session</a>
+            <a href="contact.html" class="inline-block bg-gray-900 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">Book Your Session</a>
         </div>
         <div class="absolute inset-0 bg-black opacity-50"></div>
     </section>
 
-    <!-- Teaser Portfolio Section -->
-    <section id="portfolio" class="py-20 md:py-24 bg-neutral-100">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-5xl font-bold text-gray-800 mb-4">A Glimpse of Our Work</h2>
-            <p class="text-xl text-gray-600 mb-12">Here are a few of our favorite shots. Want to see more?</p>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-                <img src="https://live.staticflickr.com/65535/54612989686_73e3eef7d8_b.jpg" alt="Portfolio Image 1" class="w-full h-auto object-cover rounded-lg shadow-md">
-                <img src="https://live.staticflickr.com/65535/54612107482_d7ff8646ca_b.jpg" alt="Portfolio Image 3" class="w-full h-auto object-cover rounded-lg shadow-md">
-                <img src="https://live.staticflickr.com/65535/54613203008_99c64a58c1_b.jpg" alt="Portfolio Image 4" class="w-full h-auto object-cover rounded-lg shadow-md">
-                <img src="https://live.staticflickr.com/65535/54613298815_459af65fed_b.jpg" alt="Portfolio Image 5" class="w-full h-auto object-cover rounded-lg shadow-md">
+    <main class="container mx-auto px-6 py-16">
+        <!-- Snippet: Services -->
+        <section class="text-center py-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Our Photography Services</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-10">From personal portraits to grand events, we offer a range of services to capture your most important moments with artistry and professionalism.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-2">Portrait Photography</h3>
+                    <p>Capturing the essence of individuals and families with timeless, expressive portraits.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-2">Wedding Photography</h3>
+                    <p>Documenting your special day with elegant and heartfelt imagery that lasts a lifetime.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-2">Event Photography</h3>
+                    <p>Comprehensive coverage for corporate events, parties, and milestones.</p>
+                </div>
             </div>
-            <div class="max-w-2xl mx-auto bg-white p-8 sm:p-10 rounded-xl shadow-2xl border">
-                <h3 class="text-3xl font-bold text-gray-800 mb-3">Unlock Our Full Portfolio</h3>
-                <p class="text-gray-600 mb-6">Enter your details to see our complete gallery and receive a <strong class="text-amber-500">10% OFF coupon</strong> for your first session!</p>
-                <form id="portfolio-unlock-form" class="space-y-4">
-                    <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 border border-gray-300 rounded-lg">
-                    <input type="email" name="email" placeholder="Your Email Address" required class="w-full p-3 border border-gray-300 rounded-lg">
-                    <input type="tel" name="phone" placeholder="Phone Number" required class="w-full p-3 border border-gray-300 rounded-lg">
-                    <button type="submit" class="w-full bg-gray-900 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">Unlock Now & Get Coupon</button>
-                </form>
+            <a href="services.html" class="inline-block bg-gray-900 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">Explore All Services</a>
+        </section>
+
+        <!-- Gemini Feature: Idea Generator -->
+        <section class="text-center py-16 bg-neutral-100 rounded-2xl my-16">
+             <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Need Inspiration?</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-10">Use our AI-powered tool to generate creative photoshoot ideas. Just enter a theme or a few keywords to get started!</p>
+            <div class="max-w-xl mx-auto">
+                <button id="getIdeasBtn" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-bold py-4 px-10 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">✨ Launch Idea Generator</button>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- AI Ideas Button Section -->
-    <section class="py-20 text-center">
-        <button id="getIdeasBtn" class="btn-polaroid">✨ Get Photo Shoot Ideas</button>
-    </section>
+        <!-- Snippet: From the Blog -->
+        <section class="text-center py-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">From The Blog</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-10">Get expert tips, inspiration, and behind-the-scenes stories to help you prepare for your perfect photoshoot.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://placehold.co/600x400/cccccc/333333?text=Portrait+Tips" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">What to Wear for Your Portrait Session</h3>
+                        <p class="text-gray-600 text-sm">Discover our top tips for selecting outfits that will make your photos shine.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://placehold.co/600x400/cccccc/333333?text=Location+Scouting" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Choosing the Perfect Location</h3>
+                        <p class="text-gray-600 text-sm">How to find a backdrop that perfectly matches the mood and style of your shoot.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://placehold.co/600x400/cccccc/333333?text=Posing+Guide" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Posing Tips for Camera-Shy People</h3>
+                        <p class="text-gray-600 text-sm">Feel confident and look natural with these simple posing techniques.</p>
+                    </div>
+                </div>
+            </div>
+            <a href="blog.html" class="inline-block bg-gray-900 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">Read More Articles</a>
+        </section>
+    </main>
 
-    <footer class="bg-gray-900 text-white py-10 rounded-t-3xl">
+    <footer class="bg-gray-900 text-white py-10 mt-16 rounded-t-3xl">
         <div class="container mx-auto px-6 text-center">
-            <p class="mb-6 text-lg">&copy; 2025 Studio 37. All rights reserved.</p>
+            <p>&copy; 2025 Studio 37. All rights reserved.</p>
         </div>
     </footer>
 
@@ -91,9 +119,9 @@
     <div id="ideasModal" class="modal">
         <div class="modal-content">
             <span class="close-button">&times;</span>
-            <h3 class="text-3xl font-bold text-gray-800 mb-6 text-center">Get Your Photo Shoot Ideas ✨</h3>
-            <p class="text-gray-700 mb-4 text-center">Tell us what kind of shoot you're looking for:</p>
-            <textarea id="ideaInput" class="w-full p-4 border border-gray-300 rounded-lg bg-gray-50 mb-6" rows="4" placeholder="e.g., 'romantic couple shoot in a park'"></textarea>
+            <h3 class="text-3xl font-bold text-gray-800 mb-6 text-center">Photoshoot Idea Generator ✨</h3>
+            <p class="text-gray-700 mb-4 text-center">Enter a theme, style, or a few keywords:</p>
+            <textarea id="ideaInput" class="w-full p-4 border border-gray-300 rounded-lg bg-gray-50 mb-4" rows="3" placeholder="e.g., 'romantic couple shoot in a park', 'fun family photos with pets', 'creative headshots for an artist'"></textarea>
             <button id="generateIdeasBtn" class="w-full bg-gray-900 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-full shadow-lg">Generate Ideas</button>
             <div id="loadingIndicator" class="loading-indicator">Generating ideas...</div>
             <div id="ideasOutput" class="ai-output-area"></div>
@@ -102,40 +130,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // --- EVENT LISTENERS AND SETUP ---
-            document.querySelectorAll('.btn-polaroid').forEach(el => {
-                const maxRotation = 3;
-                const rotation = (Math.random() * (maxRotation * 2)) - maxRotation;
-                el.style.setProperty('--btn-rotate', `${rotation}deg`);
-            });
-
-            // --- FORM HANDLERS ---
-            const portfolioUnlockForm = document.getElementById('portfolio-unlock-form');
-            if(portfolioUnlockForm) {
-                portfolioUnlockForm.addEventListener('submit', async (event) => {
-                    event.preventDefault();
-                    const submitButton = portfolioUnlockForm.querySelector('button[type="submit"]');
-                    submitButton.disabled = true;
-                    submitButton.textContent = 'Unlocking...';
-
-                    const formData = new FormData(portfolioUnlockForm);
-                    const data = Object.fromEntries(formData.entries());
-                    try {
-                        const response = await fetch('/.netlify/functions/unlock-portfolio', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
-                        if (response.ok) {
-                            window.location.href = 'portfolio.html';
-                        } else {
-                            const result = await response.json();
-                            throw new Error(result.message || 'An error occurred.');
-                        }
-                    } catch (error) {
-                        alert('Error: ' + error.message);
-                        submitButton.disabled = false;
-                        submitButton.textContent = 'Unlock Now & Get Coupon';
-                    }
-                });
-            }
-
             // --- AI IDEAS MODAL LOGIC ---
             const getIdeasButton = document.getElementById('getIdeasBtn');
             const ideasModal = document.getElementById('ideasModal');
@@ -175,7 +169,9 @@
                         body: JSON.stringify({ userIdea: userIdea })
                     });
                     const result = await response.json();
-                    if (!response.ok) throw new Error(result.message || 'Failed to generate ideas.');
+                    if (!response.ok) {
+                        throw new Error(result.message || 'Failed to generate ideas.');
+                    }
                     ideasOutput.textContent = result.ideas;
                 } catch (error) {
                     ideasOutput.textContent = `Error: ${error.message}`;
