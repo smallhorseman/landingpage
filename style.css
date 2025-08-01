@@ -25,21 +25,25 @@ h1, h2, h3, h4, h5, h6 {
     min-height: 70vh;
 }
 
-/* Standard Button Style */
+/* Standard Button Style - @apply rule removed */
 .btn-primary {
     display: inline-block;
-    background-color: #1a202c; /* bg-gray-900 */
+    background-color: #1a202c;
     color: white;
-    font-weight: bold;
-    padding: 0.75rem 2rem; /* py-3 px-8 */
-    border-radius: 9999px; /* rounded-full */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
+    font-weight: 700;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-radius: 9999px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease-in-out;
+    transform: scale(1);
     text-decoration: none;
 }
 
 .btn-primary:hover {
-    background-color: #4a5568; /* hover:bg-gray-700 */
+    background-color: #4a5568;
     transform: scale(1.05);
 }
 
@@ -73,16 +77,15 @@ h1, h2, h3, h4, h5, h6 {
     transform: rotate(var(--btn-rotate, 0deg)) scale(1.05);
 }
 
-/* Blog Post Card Style */
+/* Blog Post Card Style - @apply rule removed */
 .post-card {
     background-color: white;
-    border-radius: 0.5rem; /* rounded-lg */
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     overflow: hidden;
-    transform: translateY(0);
     transition: transform 0.3s ease-in-out;
 }
 
 .post-card:hover {
-    transform: translateY(-0.5rem); /* hover:-translate-y-2 */
+    transform: translateY(-0.5rem);
 }
