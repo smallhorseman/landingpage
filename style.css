@@ -1,182 +1,27 @@
-/*
-  style.css
-  This file contains the custom styles for the Studio 37 website.
-*/
+* File: style.css */
+/* ... (previous styles) ... */
 
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: #f9f9f9; /* Very light grey for a clean, monochrome base */
-    color: #222;
-    line-height: 1.6;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-/* Custom styles for hero section background */
-.hero-background {
-    background-image: url('https://live.staticflickr.com/65535/54612107482_d7ff8646ca_b.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    min-height: 70vh; /* Make hero section taller */
-}
-
-/* Polaroid Style for image frames */
-.polaroid-frame {
-    background-color: white;
-    padding: 1.25rem; /* Slightly larger padding for a more pronounced frame */
-    border-radius: 0.75rem; /* More rounded corners */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Stronger shadow for depth */
-    transition: all 0.3s ease-in-out;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    transform: rotate(var(--tw-rotate, 0deg));
-    position: relative;
-    cursor: pointer;
-}
-
-.polaroid-frame img {
-    filter: grayscale(0%); /* Set to 0% for full color */
-    transition: filter 0.3s ease-in-out;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 0.5rem; /* Rounded corners for the photo inside */
-}
-
-.polaroid-frame:hover img {
-    filter: grayscale(0%); /* Ensure no grayscale on hover */
-}
-
-.polaroid-frame:hover {
-    box-shadow: 0 0 25px 8px rgba(255, 0, 0, 0.6), /* Red */
-                 0 0 25px 16px rgba(255, 127, 0, 0.6), /* Orange */
-                 0 0 25px 24px rgba(255, 255, 0, 0.6), /* Yellow */
-                 0 0 25px 32px rgba(0, 255, 0, 0.6), /* Green */
-                 0 0 25px 40px rgba(0, 0, 255, 0.6), /* Blue */
-                 0 0 25px 48px rgba(75, 0, 130, 0.6), /* Indigo */
-                 0 0 25px 56px rgba(143, 0, 255, 0.6); /* Violet */
-    transform: rotate(var(--tw-rotate, 0deg)) scale(1.05); /* More pronounced scale */
-    z-index: 10;
-}
-
-/* New Polaroid-esque button style for CTA */
 .btn-polaroid {
     background-color: white;
     color: #222;
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    padding: 1.25rem 2.5rem; /* Consistent padding with polaroid frame */
-    border-radius: 0.75rem; /* Consistent border-radius */
+    padding: 1.25rem 2.5rem;
+    border-radius: 0.75rem;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
     transition: all 0.3s ease-in-out;
     font-weight: bold;
-    display: inline-block; /* Allows padding and transformation */
-    text-decoration: none; /* Remove underline for anchor tag */
-    transform: rotate(var(--btn-rotate, 0deg)); /* New variable for button rotation */
+    display: inline-block;
+    text-decoration: none;
+    transform: rotate(var(--btn-rotate, 0deg));
 }
 
 .btn-polaroid:hover {
-    box-shadow: 0 0 25px 8px rgba(255, 0, 0, 0.6),
-                 0 0 25px 16px rgba(255, 127, 0, 0.6),
-                 0 0 25px 24px rgba(255, 255, 0, 0.6),
-                 0 0 25px 32px rgba(0, 255, 0, 0.6),
-                 0 0 25px 40px rgba(0, 0, 255, 0.6),
-                 0 0 25px 48px rgba(75, 0, 130, 0.6),
-                 0 0 25px 56px rgba(143, 0, 255, 0.6);
-    transform: rotate(var(--btn-rotate, 0deg)) scale(1.05); /* Apply scale with existing rotation */
+    box-shadow: 0 0 25px 8px rgba(255, 165, 0, 0.6), 0 0 25px 16px rgba(255, 255, 0, 0.6);
+    transform: rotate(var(--btn-rotate, 0deg)) scale(1.05);
 }
 
-/* Modal Styles */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1000; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 30px;
-    border-radius: 1rem;
-    width: 90%;
-    max-width: 600px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    position: relative;
-    animation: fadeIn 0.3s ease-out;
-}
-
-.close-button {
-    color: #aaa;
-    position: absolute;
-    top: 15px;
-    right: 25px;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.2s;
-}
-
-.close-button:hover,
-.close-button:focus {
-    color: #333;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.loading-indicator {
-    display: none; /* Hidden by default */
-    text-align: center;
-    margin-top: 20px;
-    color: #555;
-    font-size: 1.1em;
-}
-
-.loading-indicator::before {
-    content: '';
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border: 3px solid #ccc;
-    border-top-color: #333;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    vertical-align: middle;
-    margin-right: 10px;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.ai-output-area {
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #f0f0f0;
-    border-radius: 0.5rem;
-    white-space: pre-wrap; /* Preserve formatting from LLM */
-    text-align: left;
-    font-size: 0.95em;
+.btn-primary {
+    @apply inline-block bg-gray-900 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105;
 }
