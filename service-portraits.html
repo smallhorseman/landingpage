@@ -41,13 +41,18 @@
             </div>
         </section>
 
-        <!-- Flickr Gallery Placeholder -->
+        <!-- Flickr Gallery -->
         <section class="text-center mb-16">
             <h2 class="text-4xl font-bold text-gray-800 mb-8">Portrait Gallery</h2>
-            <p class="text-lg text-gray-600 mb-8">Here is a selection of our recent portrait work. For our full portfolio, please visit our <a href="portfolio.html" class="text-amber-600 underline">portfolio page</a>.</p>
-            <!-- Replace with your Flickr Album Embed Code -->
-            <div class="bg-gray-200 rounded-lg p-8 text-center">
-                <p class="text-gray-600">Your Flickr Album Gallery Will Be Embedded Here.</p>
+            <!-- 
+              IMPORTANT: Replace 'YOUR_ALBUM_ID_HERE' with the actual ID of your Flickr album for portraits.
+            -->
+            <div id="flickr-gallery" data-album-id="YOUR_ALBUM_ID_HERE" class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- Loading Skeletons -->
+                <div class="bg-gray-200 rounded-lg animate-pulse" style="height: 300px;"></div>
+                <div class="bg-gray-200 rounded-lg animate-pulse" style="height: 300px;"></div>
+                <div class="bg-gray-200 rounded-lg animate-pulse" style="height: 300px;"></div>
+                <div class="bg-gray-200 rounded-lg animate-pulse" style="height: 300px;"></div>
             </div>
         </section>
 
@@ -65,5 +70,35 @@
         </div>
     </footer>
     <script src="js/main.js"></script>
+    <script>
+        // Add this script to fetch photos for this specific page
+        document.addEventListener('DOMContentLoaded', () => {
+            const gallery = document.getElementById('flickr-gallery');
+            const albumId = gallery.getAttribute('data-album-id');
+
+            if (albumId && albumId !== 'YOUR_ALBUM_ID_HERE') {
+                fetch(`/.netlify/functions/get-flickr-album?album_id=${203068046@N04}`)
+                    .then(response => response.json())
+                    .then(photoUrls => {
+                        gallery.innerHTML = ''; // Clear loading skeletons
+                        photoUrls.forEach(url => {
+                            const imgContainer = document.createElement('div');
+                            imgContainer.className = 'rounded-lg shadow-lg overflow-hidden';
+                            const img = document.createElement('img');
+                            img.src = url;
+                            img.className = 'w-full h-full object-cover';
+                            imgContainer.appendChild(img);
+                            gallery.appendChild(imgContainer);
+                        });
+                    })
+                    .catch(error => {
+                        console.error('Failed to load Flickr gallery:', error);
+                        gallery.innerHTML = '<p class="text-red-500 col-span-full">Could not load photo gallery at this time.</p>';
+                    });
+            } else {
+                gallery.innerHTML = '<p class="text-gray-500 col-span-full">Please configure a Flickr Album ID to display photos.</p>';
+            }
+        });
+    </script>
 </body>
 </html>
