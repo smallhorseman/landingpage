@@ -76,24 +76,24 @@
             <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">From The Blog</h2>
             <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-10">Get expert tips, inspiration, and behind-the-scenes stories to help you prepare for your perfect photoshoot.</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="https://placehold.co/600x400/cccccc/333333?text=Portrait+Tips" class="w-full h-48 object-cover">
+                <div class="post-card">
+                    <a href="post1.html"><img src="https://placehold.co/600x400/e2e8f0/4a5568?text=Outfits" class="w-full h-48 object-cover"></a>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">What to Wear for Your Portrait Session</h3>
+                        <h3 class="text-xl font-semibold mb-2"><a href="post1.html" class="hover:text-amber-600">What to Wear for Your Portrait Session</a></h3>
                         <p class="text-gray-600 text-sm">Discover our top tips for selecting outfits that will make your photos shine.</p>
                     </div>
                 </div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="https://placehold.co/600x400/cccccc/333333?text=Location+Scouting" class="w-full h-48 object-cover">
+                <div class="post-card">
+                    <a href="post2.html"><img src="https://placehold.co/600x400/e2e8f0/4a5568?text=Location+Scouting" class="w-full h-48 object-cover"></a>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Choosing the Perfect Location</h3>
+                        <h3 class="text-xl font-semibold mb-2"><a href="post2.html" class="hover:text-amber-600">Choosing the Perfect Location</a></h3>
                         <p class="text-gray-600 text-sm">How to find a backdrop that perfectly matches the mood and style of your shoot.</p>
                     </div>
                 </div>
-                <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="https://placehold.co/600x400/cccccc/333333?text=Posing+Guide" class="w-full h-48 object-cover">
+                <div class="post-card">
+                    <a href="post3.html"><img src="https://placehold.co/600x400/e2e8f0/4a5568?text=Posing+Guide" class="w-full h-48 object-cover"></a>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Posing Tips for Camera-Shy People</h3>
+                        <h3 class="text-xl font-semibold mb-2"><a href="post3.html" class="hover:text-amber-600">Posing Tips for Camera-Shy People</a></h3>
                         <p class="text-gray-600 text-sm">Feel confident and look natural with these simple posing techniques.</p>
                     </div>
                 </div>
@@ -114,10 +114,37 @@
             if(portfolioUnlockForm) {
                 portfolioUnlockForm.addEventListener('submit', async (event) => {
                     event.preventDefault();
-                    // ... (form submission logic)
+                    const submitButton = portfolioUnlockForm.querySelector('button[type="submit"]');
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Unlocking...';
+
+                    const formData = new FormData(portfolioUnlockForm);
+                    const data = Object.fromEntries(formData.entries());
+                    try {
+                        const response = await fetch('/.netlify/functions/unlock-portfolio', { 
+                            method: 'POST', 
+                            headers: { 'Content-Type': 'application/json' }, 
+                            body: JSON.stringify(data) 
+                        });
+                        if (response.ok) {
+                            window.location.href = 'portfolio.html';
+                        } else {
+                            const result = await response.json();
+                            throw new Error(result.message || 'An error occurred.');
+                        }
+                    } catch (error) {
+                        alert('Error: ' + error.message);
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Unlock Now & Get Coupon';
+                    }
                 });
             }
-            // ... (polaroid button rotation logic)
+            
+            // Add rotation to polaroid buttons
+            document.querySelectorAll('.btn-polaroid').forEach(button => {
+                const rotation = (Math.random() * 6) - 3; // -3 to +3 degrees
+                button.style.setProperty('--btn-rotate', `${rotation}deg`);
+            });
         });
     </script>
 </body>
