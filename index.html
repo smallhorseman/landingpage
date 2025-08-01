@@ -108,6 +108,17 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const portfolioUnlockForm = document.getElementById('portfolio-unlock-form');
+            if(portfolioUnlockForm) {
+                portfolioUnlockForm.addEventListener('submit', async (event) => {
+                    event.preventDefault();
+                    // ... (form submission logic)
+                });
+            }
+            // ... (polaroid button rotation logic)
+        });
+    </script>
 </body>
 </html>
