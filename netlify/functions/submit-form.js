@@ -1,100 +1,57 @@
-// Located in: netlify/functions/submit-form.js
+// Located in: netlify/functions/unlock-portfolio.js
 
 const fetch = require('node-fetch');
 
-// --- Odoo CRM Integration Function ---
-async function createOdooLead(leadData) {
-  const { ODOO_URL, ODOO_DB, ODOO_USERNAME, ODOO_API_KEY } = process.env;
-
-  const endpoint = `${ODOO_URL}/jsonrpc`;
-  const uid = await authenticateOdoo(endpoint);
-
-  const params = {
-    service: 'object',
-    method: 'execute_kw',
-    args: [
-      ODOO_DB,
-      uid,
-      ODOO_API_KEY,
-      'crm.lead',
-      'create',
-      [{
-        name: `New Lead from Website: ${leadData.name}`,
-        contact_name: leadData.name,
-        email_from: leadData.email,
-        description: leadData.message,
-        type: 'lead'
-      }]
-    ]
-  };
-
-  await fetch(endpoint, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ jsonrpc: '2.0', method: 'call', params: params })
-  });
-}
-
-async function authenticateOdoo(endpoint) {
-    const { ODOO_DB, ODOO_USERNAME, ODOO_API_KEY } = process.env;
-    const response = await fetch(`${endpoint.replace('/jsonrpc', '')}/web/session/authenticate`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            jsonrpc: '2.0',
-            method: 'call',
-            params: {
-                db: ODOO_DB,
-                login: ODOO_USERNAME,
-                password: ODOO_API_KEY
-            }
-        })
-    });
-    const data = await response.json();
-    if (!data.result || !data.result.uid) {
-        throw new Error('Odoo authentication failed');
-    }
-    return data.result.uid;
-}
-
-
-// --- Main Handler ---
 exports.handler = async function(event) {
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method Not Allowed' };
   }
 
   const formData = JSON.parse(event.body);
-  
+
   try {
-    // --- Task 1: Send Email Notification via Resend ---
-    // (Existing Resend logic remains here)
+    // --- Task 1: Create Lead in Odoo via our new app endpoint ---
+     await fetch(process.env.ODOO_WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: event.body // Forward the exact same JSON data
+    });
+
+    // --- Task 2: Send Coupon Email & Admin Notification via Resend ---
     const RESEND_API_KEY = process.env.RESEND_API_KEY;
+    // Send coupon to user
     await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${RESEND_API_KEY}` },
+        body: JSON.stringify({
+            from: `Studio 37 <noreply@ponyboy.win>`,
+            to: formData.email,
+            subject: `Here's Your 10% Off Coupon from Studio 37!`,
+            html: `<h1>Thank You!</h1><p>Here is your coupon for <strong>10% OFF</strong> any session: <strong>WELCOME10</strong></p>`
+        })
+    });
+    // Send notification to admin
+     await fetch('https://api.resend.com/emails', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${RESEND_API_KEY}` },
         body: JSON.stringify({
             from: `Studio 37 Website <noreply@ponyboy.win>`,
             to: 'sales@studio37.cc',
             reply_to: formData.email,
-            subject: `New Lead from ${formData.name} - Studio 37 Website`,
-            html: `...` // Your existing email HTML
+            subject: `New Portfolio Unlock Lead: ${formData.name}`,
+            html: `<h1>New Portfolio Unlock</h1><p>Name: ${formData.name}</p><p>Email: ${formData.email}</p><p>Phone: ${formData.phone}</p>`
         })
     });
 
-    // --- Task 2: Create Lead in Odoo CRM ---
-    await createOdooLead(formData);
-
     return {
       statusCode: 200,
-      body: JSON.stringify({ message: "Thank you for your message! We will be in touch soon." })
+      body: JSON.stringify({ message: "Success! Check your email for the coupon." })
     };
-
   } catch (error) {
-    console.error('Submission Error:', error);
+    console.error('Portfolio Unlock Error:', error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ message: 'There was an error submitting the form.' })
+      body: JSON.stringify({ message: 'There was an error. Please try again.' })
     };
   }
 };
