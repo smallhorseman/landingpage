@@ -44,10 +44,8 @@
         <!-- Flickr Gallery -->
         <section class="text-center mb-16">
             <h2 class="text-4xl font-bold text-gray-800 mb-8">Portrait Gallery</h2>
-            <!-- 
-              IMPORTANT: Replace 'YOUR_ALBUM_ID_HERE' with the actual ID of your Flickr album for portraits.
-            -->
-            <div id="flickr-gallery" data-album-id="YOUR_ALBUM_ID_HERE" class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <!-- This album ID is now set to the one you provided -->
+            <div id="flickr-gallery" data-album-id="72177720327835516" class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <!-- Loading Skeletons -->
                 <div class="bg-gray-200 rounded-lg animate-pulse" style="height: 300px;"></div>
                 <div class="bg-gray-200 rounded-lg animate-pulse" style="height: 300px;"></div>
@@ -77,8 +75,18 @@
             const albumId = gallery.getAttribute('data-album-id');
 
             if (albumId && albumId !== 'YOUR_ALBUM_ID_HERE') {
-                fetch(`/.netlify/functions/get-flickr-album?album_id=${203068046@N04}`)
-                    .then(response => response.json())
+                // Construct a full, absolute URL to the Netlify function.
+                // This is more robust for different preview/deployment environments.
+                const baseUrl = `${window.location.protocol}//${window.location.host}`;
+                const functionUrl = `${baseUrl}/.netlify/functions/get-flickr-album?album_id=${albumId}`;
+                
+                fetch(functionUrl)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`Network response was not ok (${response.status})`);
+                        }
+                        return response.json();
+                    })
                     .then(photoUrls => {
                         gallery.innerHTML = ''; // Clear loading skeletons
                         photoUrls.forEach(url => {
