@@ -6,20 +6,7 @@
     <title>Studio 37 - Life's a Movie</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; background-color: #f9f9f9; color: #222; }
-        h1, h2, h3, h4, h5, h6 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.05em; }
-        .hero-background { background-image: url('https://live.staticflickr.com/65535/54612107482_d7ff8646ca_b.jpg'); background-size: cover; background-position: center; background-attachment: fixed; min-height: 70vh; }
-        /* Modal Styles */
-        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.7); display: flex; justify-content: center; align-items: center; }
-        .modal-content { background-color: #fefefe; margin: auto; padding: 30px; border-radius: 1rem; width: 90%; max-width: 600px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); position: relative; }
-        .close-button { color: #aaa; position: absolute; top: 15px; right: 25px; font-size: 28px; font-weight: bold; cursor: pointer; }
-        .close-button:hover, .close-button:focus { color: #333; }
-        .loading-indicator { display: none; text-align: center; margin-top: 20px; }
-        .loading-indicator::before { content: ''; display: inline-block; width: 20px; height: 20px; border: 3px solid #ccc; border-top-color: #333; border-radius: 50%; animation: spin 1s linear infinite; vertical-align: middle; margin-right: 10px; }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        .ai-output-area { margin-top: 20px; padding: 15px; background-color: #f0f0f0; border-radius: 0.5rem; white-space: pre-wrap; text-align: left; max-height: 40vh; overflow-y: auto;}
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="antialiased">
 
@@ -28,7 +15,6 @@
             <a href="index.html"><img src="https://live.staticflickr.com/65535/54682452016_5e3a5330ea_b.jpg" alt="Studio 37 Logo" class="h-12 w-auto"></a>
             <div class="hidden md:flex space-x-8">
                 <a href="services.html" class="text-gray-700 hover:text-gray-900 font-medium font-oswald">Services</a>
-                <a href="packages.html" class="text-gray-700 hover:text-gray-900 font-medium font-oswald">Packages</a>
                 <a href="portfolio.html" class="text-gray-700 hover:text-gray-900 font-medium font-oswald">Portfolio</a>
                 <a href="blog.html" class="text-gray-700 hover:text-gray-900 font-medium font-oswald">Blog</a>
                 <a href="about.html" class="text-gray-700 hover:text-gray-900 font-medium font-oswald">About Us</a>
@@ -37,48 +23,55 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero-background text-white flex items-center justify-center text-center rounded-b-3xl overflow-hidden shadow-2xl relative">
         <div class="container mx-auto px-6 py-20 relative z-10">
             <h1 class="text-6xl md:text-8xl font-extrabold mb-4 drop-shadow-xl">Studio 37</h1>
             <p class="text-2xl md:text-3xl mb-8 max-w-3xl mx-auto font-medium italic drop-shadow-lg">life's a movie, let us capture your highlight reel</p>
-            <a href="contact.html" class="inline-block bg-gray-900 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">Book Your Session</a>
+            <a href="contact.html" class="btn-polaroid">Book Your Session</a>
         </div>
         <div class="absolute inset-0 bg-black opacity-50"></div>
     </section>
 
     <main class="container mx-auto px-6 py-16">
-        <!-- Snippet: Services -->
         <section class="text-center py-16">
             <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Our Photography Services</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-10">From personal portraits to grand events, we offer a range of services to capture your most important moments with artistry and professionalism.</p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-10">We specialize in capturing authentic moments across a wide range of styles and needs.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
                 <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-2xl font-semibold mb-2">Portrait Photography</h3>
-                    <p>Capturing the essence of individuals and families with timeless, expressive portraits.</p>
+                    <h3 class="text-2xl font-semibold mb-2">Portraits</h3>
+                    <p>Timeless photos for individuals, couples, and families that capture personality and connection.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-2xl font-semibold mb-2">Wedding Photography</h3>
-                    <p>Documenting your special day with elegant and heartfelt imagery that lasts a lifetime.</p>
+                    <h3 class="text-2xl font-semibold mb-2">Events</h3>
+                    <p>Comprehensive coverage for weddings, religious ceremonies, and corporate gatherings.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-2xl font-semibold mb-2">Event Photography</h3>
-                    <p>Comprehensive coverage for corporate events, parties, and milestones.</p>
+                    <h3 class="text-2xl font-semibold mb-2">Art</h3>
+                    <p>Professional, gallery-quality photography for artists to showcase their work and build their brand.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-2">Professional</h3>
+                    <p>High-impact imagery for real estate, commercial content, and small business branding.</p>
                 </div>
             </div>
-            <a href="services.html" class="inline-block bg-gray-900 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">Explore All Services</a>
+            <a href="services.html" class="btn-primary">Explore All Services</a>
         </section>
 
-        <!-- Gemini Feature: Idea Generator -->
         <section class="text-center py-16 bg-neutral-100 rounded-2xl my-16">
-             <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Need Inspiration?</h2>
-            <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-10">Use our AI-powered tool to generate creative photoshoot ideas. Just enter a theme or a few keywords to get started!</p>
-            <div class="max-w-xl mx-auto">
-                <button id="getIdeasBtn" class="inline-block bg-amber-500 hover:bg-amber-600 text-white font-bold py-4 px-10 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">✨ Launch Idea Generator</button>
+             <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Unlock Our Portfolio</h2>
+             <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-10">See our complete, categorized portfolio and get a special offer for taking a look.</p>
+            <div class="max-w-2xl mx-auto bg-white p-8 sm:p-10 rounded-xl shadow-2xl border">
+                <h3 class="text-3xl font-bold text-gray-800 mb-3">View Our Full Gallery</h3>
+                <p class="text-gray-600 mb-6">Enter your details to see our complete portfolio and receive a <strong class="text-amber-500">10% OFF coupon</strong> for your first session!</p>
+                <form id="portfolio-unlock-form" class="space-y-4">
+                    <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 border border-gray-300 rounded-lg">
+                    <input type="email" name="email" placeholder="Your Email Address" required class="w-full p-3 border border-gray-300 rounded-lg">
+                    <input type="tel" name="phone" placeholder="Phone Number" required class="w-full p-3 border border-gray-300 rounded-lg">
+                    <button type="submit" class="btn-primary w-full">Unlock Now & Get Coupon</button>
+                </form>
             </div>
         </section>
 
-        <!-- Snippet: From the Blog -->
         <section class="text-center py-16">
             <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">From The Blog</h2>
             <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-10">Get expert tips, inspiration, and behind-the-scenes stories to help you prepare for your perfect photoshoot.</p>
@@ -105,7 +98,7 @@
                     </div>
                 </div>
             </div>
-            <a href="blog.html" class="inline-block bg-gray-900 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">Read More Articles</a>
+            <a href="blog.html" class="btn-primary">Read More Articles</a>
         </section>
     </main>
 
@@ -115,72 +108,6 @@
         </div>
     </footer>
 
-    <!-- AI Ideas Modal -->
-    <div id="ideasModal" class="modal">
-        <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h3 class="text-3xl font-bold text-gray-800 mb-6 text-center">Photoshoot Idea Generator ✨</h3>
-            <p class="text-gray-700 mb-4 text-center">Enter a theme, style, or a few keywords:</p>
-            <textarea id="ideaInput" class="w-full p-4 border border-gray-300 rounded-lg bg-gray-50 mb-4" rows="3" placeholder="e.g., 'romantic couple shoot in a park', 'fun family photos with pets', 'creative headshots for an artist'"></textarea>
-            <button id="generateIdeasBtn" class="w-full bg-gray-900 hover:bg-gray-700 text-white font-bold py-3 px-8 rounded-full shadow-lg">Generate Ideas</button>
-            <div id="loadingIndicator" class="loading-indicator">Generating ideas...</div>
-            <div id="ideasOutput" class="ai-output-area"></div>
-        </div>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // --- AI IDEAS MODAL LOGIC ---
-            const getIdeasButton = document.getElementById('getIdeasBtn');
-            const ideasModal = document.getElementById('ideasModal');
-            const closeButton = ideasModal.querySelector('.close-button');
-            const ideaInput = document.getElementById('ideaInput');
-            const generateIdeasButton = document.getElementById('generateIdeasBtn');
-            const loadingIndicator = document.getElementById('loadingIndicator');
-            const ideasOutput = document.getElementById('ideasOutput');
-
-            const openModal = () => {
-                ideasModal.style.display = 'flex';
-                ideasOutput.textContent = '';
-                ideaInput.value = '';
-                loadingIndicator.style.display = 'none';
-            };
-            const closeModal = () => { ideasModal.style.display = 'none'; };
-
-            getIdeasButton.addEventListener('click', openModal);
-            closeButton.addEventListener('click', closeModal);
-            window.addEventListener('click', (event) => { if (event.target == ideasModal) closeModal(); });
-
-            generateIdeasButton.addEventListener('click', async () => {
-                const userIdea = ideaInput.value.trim();
-                if (!userIdea) {
-                    ideasOutput.textContent = 'Please enter a brief description for your photo shoot idea.';
-                    return;
-                }
-
-                ideasOutput.textContent = '';
-                loadingIndicator.style.display = 'block';
-                generateIdeasButton.disabled = true;
-
-                try {
-                    const response = await fetch('/.netlify/functions/generate-ideas', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ userIdea: userIdea })
-                    });
-                    const result = await response.json();
-                    if (!response.ok) {
-                        throw new Error(result.message || 'Failed to generate ideas.');
-                    }
-                    ideasOutput.textContent = result.ideas;
-                } catch (error) {
-                    ideasOutput.textContent = `Error: ${error.message}`;
-                } finally {
-                    loadingIndicator.style.display = 'none';
-                    generateIdeasButton.disabled = false;
-                }
-            });
-        });
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>
