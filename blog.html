@@ -7,85 +7,138 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f9f9f9;
-            color: #222;
-            line-height: 1.6;
-        }
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Oswald', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
+        body { font-family: 'Inter', sans-serif; background-color: #f9f9f9; color: #222; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.05em; }
+        .post-card { @apply bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:-translate-y-2; }
     </style>
 </head>
 <body class="antialiased">
 
     <header class="bg-white shadow-md p-5 sticky top-0 z-50">
         <nav class="container mx-auto flex justify-between items-center px-4">
-            <a href="index.html">
-                <img src="https://live.staticflickr.com/65535/54682452016_5e3a5330ea_b.jpg" alt="Studio 37 Logo" class="h-12 w-auto">
-            </a>
+            <a href="index.html"><img src="https://live.staticflickr.com/65535/54682452016_5e3a5330ea_b.jpg" alt="Studio 37 Logo" class="h-12 w-auto"></a>
             <div class="hidden md:flex space-x-8">
-                <a href="index.html#services" class="text-gray-700 hover:text-gray-900 font-medium font-oswald transition-colors duration-200">Services</a>
-                <a href="index.html#packages" class="text-gray-700 hover:text-gray-900 font-medium font-oswald transition-colors duration-200">Packages</a>
-                <a href="index.html#portfolio" class="text-gray-700 hover:text-gray-900 font-medium font-oswald transition-colors duration-200">Portfolio</a>
-                <a href="blog.html" class="text-gray-700 hover:text-gray-900 font-medium font-oswald transition-colors duration-200">Blog</a>
-                <a href="index.html#about" class="text-gray-700 hover:text-gray-900 font-medium font-oswald transition-colors duration-200">About Us</a>
-                <a href="index.html#testimonials" class="text-gray-700 hover:text-gray-900 font-medium font-oswald transition-colors duration-200">Testimonials</a>
-                <a href="index.html#contact" class="text-gray-700 hover:text-gray-900 font-medium font-oswald transition-colors duration-200">Contact</a>
+                <a href="services.html" class="text-gray-700 hover:text-gray-900 font-medium font-oswald">Services</a>
+                <a href="packages.html" class="text-gray-700 hover:text-gray-900 font-medium font-oswald">Packages</a>
+                <a href="portfolio.html" class="text-gray-700 hover:text-gray-900 font-medium font-oswald">Portfolio</a>
+                <a href="blog.html" class="text-gray-900 font-bold font-oswald">Blog</a>
+                <a href="about.html" class="text-gray-700 hover:text-gray-900 font-medium font-oswald">About Us</a>
+                <a href="contact.html" class="text-gray-700 hover:text-gray-900 font-medium font-oswald">Contact</a>
             </div>
-            <button class="md:hidden text-gray-700 hover:text-gray-900 focus:outline-none">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
         </nav>
     </header>
 
-    <main class="py-20 md:py-24">
-        <div class="container mx-auto px-6">
-            <h1 class="text-5xl font-bold text-gray-800 mb-10 text-center">Studio 37 Blog</h1>
-            <p class="text-center text-xl text-gray-600 max-w-3xl mx-auto mb-16">
-                Tips, stories, and insights from our latest shoots. Your guide to capturing perfect moments.
-            </p>
+    <main class="container mx-auto px-6 py-16">
+        <section class="text-center mb-16">
+            <h1 class="text-5xl md:text-6xl font-bold text-gray-800 mb-4">Studio 37 Blog</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Expert tips, client stories, and creative inspiration to help you get the most out of your photography experience.</p>
+        </section>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-
-                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition-shadow duration-300 hover:shadow-xl">
-                    <img src="https://placehold.co/600x400/cccccc/333333?text=Blog+Image" alt="Blog Post 1" class="w-full h-56 object-cover rounded-md mb-6">
-                    <h2 class="text-3xl font-semibold text-gray-800 mb-3">5 Tips for a Perfect Golden Hour Photoshoot</h2>
-                    <p class="text-gray-500 text-sm mb-4">July 27, 2025</p>
-                    <p class="text-gray-600 text-lg mb-6">
-                        Discover the secrets to capturing breathtaking photos during the magical golden hour. From timing to location, we cover it all...
-                    </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <!-- Blog Post 1 -->
+            <div class="post-card">
+                <img src="https://placehold.co/600x400/e2e8f0/4a5568?text=Outfits" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <p class="text-sm text-gray-500 mb-2">August 1, 2025</p>
+                    <h2 class="text-2xl font-semibold mb-3">What to Wear for Your Portrait Session: A Style Guide</h2>
+                    <p class="text-gray-700 mb-4">Coordinating outfits can be tricky. We break down the do's and don'ts of selecting colors, patterns, and styles that will make your group look cohesive and timeless.</p>
                     <a href="#" class="font-bold text-gray-800 hover:underline">Read More &rarr;</a>
                 </div>
-
-                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition-shadow duration-300 hover:shadow-xl">
-                    <img src="https://placehold.co/600x400/cccccc/333333?text=Blog+Image" alt="Blog Post 2" class="w-full h-56 object-cover rounded-md mb-6">
-                    <h2 class="text-3xl font-semibold text-gray-800 mb-3">Choosing the Right Outfit for Your Family Portraits</h2>
-                    <p class="text-gray-500 text-sm mb-4">July 20, 2025</p>
-                    <p class="text-gray-600 text-lg mb-6">
-                        What you wear can make or break a photo. Here are our tried-and-true tips for coordinating outfits without looking too matched...
-                    </p>
+            </div>
+            <!-- Blog Post 2 -->
+            <div class="post-card">
+                <img src="https://placehold.co/600x400/e2e8f0/4a5568?text=Golden+Hour" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <p class="text-sm text-gray-500 mb-2">July 28, 2025</p>
+                    <h2 class="text-2xl font-semibold mb-3">The Magic of Golden Hour: Why It's the Best Time for Photos</h2>
+                    <p class="text-gray-700 mb-4">That dreamy, golden light isn't an accident. Learn why photographers love the hour after sunrise and before sunset, and how you can take advantage of it.</p>
                     <a href="#" class="font-bold text-gray-800 hover:underline">Read More &rarr;</a>
                 </div>
-                
-                <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-100 transition-shadow duration-300 hover:shadow-xl">
-                    <img src="https://placehold.co/600x400/cccccc/333333?text=Blog+Image" alt="Blog Post 3" class="w-full h-56 object-cover rounded-md mb-6">
-                    <h2 class="text-3xl font-semibold text-gray-800 mb-3">A Look Behind the Scenes: A Wedding at Dawn</h2>
-                    <p class="text-gray-500 text-sm mb-4">July 15, 2025</p>
-                    <p class="text-gray-600 text-lg mb-6">
-                        Join us as we recount a beautiful wedding ceremony we had the honor of capturing as the sun rose over the hills...
-                    </p>
+            </div>
+            <!-- Blog Post 3 -->
+            <div class="post-card">
+                <img src="https://placehold.co/600x400/e2e8f0/4a5568?text=Location" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <p class="text-sm text-gray-500 mb-2">July 25, 2025</p>
+                    <h2 class="text-2xl font-semibold mb-3">Urban vs. Nature: Choosing the Perfect Portrait Location</h2>
+                    <p class="text-gray-700 mb-4">The backdrop sets the mood. We compare the benefits of a bustling city street versus a serene park to help you decide which environment best tells your story.</p>
                     <a href="#" class="font-bold text-gray-800 hover:underline">Read More &rarr;</a>
                 </div>
-
+            </div>
+            <!-- Blog Post 4 -->
+            <div class="post-card">
+                <img src="https://placehold.co/600x400/e2e8f0/4a5568?text=Posing" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <p class="text-sm text-gray-500 mb-2">July 22, 2025</p>
+                    <h2 class="text-2xl font-semibold mb-3">5 Simple Posing Tips for People Who Feel Awkward on Camera</h2>
+                    <p class="text-gray-700 mb-4">"I don't know what to do with my hands!" We've all been there. These simple, natural poses will help you feel comfortable and look your best.</p>
+                    <a href="#" class="font-bold text-gray-800 hover:underline">Read More &rarr;</a>
+                </div>
+            </div>
+            <!-- Blog Post 5 -->
+            <div class="post-card">
+                <img src="https://placehold.co/600x400/e2e8f0/4a5568?text=Kids" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <p class="text-sm text-gray-500 mb-2">July 18, 2025</p>
+                    <h2 class="text-2xl font-semibold mb-3">Capturing Joy: How to Prepare Your Kids for a Fun Photoshoot</h2>
+                    <p class="text-gray-700 mb-4">A successful family session with young children is all about preparation. From snacks to mindset, here’s how to ensure genuine smiles instead of meltdowns.</p>
+                    <a href="#" class="font-bold text-gray-800 hover:underline">Read More &rarr;</a>
+                </div>
+            </div>
+            <!-- Blog Post 6 -->
+            <div class="post-card">
+                <img src="https://placehold.co/600x400/e2e8f0/4a5568?text=Prints" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <p class="text-sm text-gray-500 mb-2">July 15, 2025</p>
+                    <h2 class="text-2xl font-semibold mb-3">Beyond the Screen: The Importance of Printing Your Photos</h2>
+                    <p class="text-gray-700 mb-4">In a digital world, a physical print has more power than ever. We explore the best ways to display your portraits and create lasting family heirlooms.</p>
+                    <a href="#" class="font-bold text-gray-800 hover:underline">Read More &rarr;</a>
+                </div>
+            </div>
+            <!-- Blog Post 7 -->
+            <div class="post-card">
+                <img src="https://placehold.co/600x400/e2e8f0/4a5568?text=Props" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <p class="text-sm text-gray-500 mb-2">July 11, 2025</p>
+                    <h2 class="text-2xl font-semibold mb-3">Using Props to Personalize Your Portrait Session</h2>
+                    <p class="text-gray-700 mb-4">Props can add a wonderful layer of personality to your photos. We share ideas on how to incorporate meaningful items, from a vintage car to a beloved family pet.</p>
+                    <a href="#" class="font-bold text-gray-800 hover:underline">Read More &rarr;</a>
+                </div>
+            </div>
+            <!-- Blog Post 8 -->
+            <div class="post-card">
+                <img src="https://placehold.co/600x400/e2e8f0/4a5568?text=Headshots" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <p class="text-sm text-gray-500 mb-2">July 8, 2025</p>
+                    <h2 class="text-2xl font-semibold mb-3">The Modern Headshot: More Than Just a LinkedIn Photo</h2>
+                    <p class="text-gray-700 mb-4">A great headshot is a powerful branding tool. Learn how we approach professional portraits to capture your confidence and personality for any platform.</p>
+                    <a href="#" class="font-bold text-gray-800 hover:underline">Read More &rarr;</a>
+                </div>
+            </div>
+            <!-- Blog Post 9 -->
+            <div class="post-card">
+                <img src="https://placehold.co/600x400/e2e8f0/4a5568?text=Weather" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <p class="text-sm text-gray-500 mb-2">July 4, 2025</p>
+                    <h2 class="text-2xl font-semibold mb-3">Embracing the Elements: Making the Most of Any Weather</h2>
+                    <p class="text-gray-700 mb-4">An overcast sky or a little rain doesn't mean your shoot is ruined! Discover how different weather conditions can create unique and dramatic portrait opportunities.</p>
+                    <a href="#" class="font-bold text-gray-800 hover:underline">Read More &rarr;</a>
+                </div>
+            </div>
+             <!-- Blog Post 10 -->
+            <div class="post-card">
+                <img src="https://placehold.co/600x400/e2e8f0/4a5568?text=Trust" class="w-full h-56 object-cover">
+                <div class="p-6">
+                    <p class="text-sm text-gray-500 mb-2">July 1, 2025</p>
+                    <h2 class="text-2xl font-semibold mb-3">Why Trusting Your Photographer Leads to Better Photos</h2>
+                    <p class="text-gray-700 mb-4">The best portraits come from collaboration and trust. We discuss the client-photographer relationship and how letting go of expectations can result in authentic, beautiful images.</p>
+                    <a href="#" class="font-bold text-gray-800 hover:underline">Read More &rarr;</a>
+                </div>
             </div>
         </div>
     </main>
 
-    <footer class="bg-gray-900 text-white py-10 mt-16 rounded-t-3xl overflow-hidden shadow-inner">
+    <footer class="bg-gray-900 text-white py-10 mt-16 rounded-t-3xl">
         <div class="container mx-auto px-6 text-center">
             <p>&copy; 2025 Studio 37. All rights reserved.</p>
         </div>
