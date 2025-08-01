@@ -1,6 +1,4 @@
-/* ... (other styles) ... */
-```javascript
-// File: netlify/functions/unlock-portfolio.js
+// Located in: netlify/functions/unlock-portfolio.js
 const fetch = require('node-fetch');
 
 exports.handler = async function(event) {
@@ -13,7 +11,7 @@ exports.handler = async function(event) {
 
   try {
     // Send coupon to user
-    await fetch('[https://api.resend.com/emails](https://api.resend.com/emails)', {
+    await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${RESEND_API_KEY}` },
       body: JSON.stringify({
@@ -24,7 +22,7 @@ exports.handler = async function(event) {
       })
     });
     // Send notification to admin
-    await fetch('[https://api.resend.com/emails](https://api.resend.com/emails)', {
+    await fetch('https://api.resend.com/emails', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${RESEND_API_KEY}` },
         body: JSON.stringify({
