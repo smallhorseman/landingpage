@@ -16,26 +16,26 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 0.05em;
 }
 
-/* Hero Section Background */
+/* === UPDATED HERO SECTION BACKGROUND === */
 .hero-background {
-    background-image: url('https://live.staticflickr.com/65535/54612107482_d7ff8646ca_b.jpg');
+    background-image: url('https://live.staticflickr.com/65535/54693157797_4c6b8f02c6_k.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     min-height: 70vh;
 }
 
-/* Standard Button Style - @apply rule removed */
+/* Standard Button Style */
 .btn-primary {
     display: inline-block;
-    background-color: #1a202c;
+    background-color: #1a202c; /* bg-gray-900 */
     color: white;
     font-weight: 700;
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
     padding-left: 2rem;
     padding-right: 2rem;
-    border-radius: 9999px;
+    border-radius: 9999px; /* rounded-full */
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease-in-out;
     transform: scale(1);
@@ -43,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary:hover {
-    background-color: #4a5568;
+    background-color: #4a5568; /* hover:bg-gray-700 */
     transform: scale(1.05);
 }
 
@@ -77,7 +77,7 @@ h1, h2, h3, h4, h5, h6 {
     transform: rotate(var(--btn-rotate, 0deg)) scale(1.05);
 }
 
-/* Blog Post Card Style - @apply rule removed */
+/* Blog Post Card Style */
 .post-card {
     background-color: white;
     border-radius: 0.5rem;
