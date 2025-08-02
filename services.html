@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services - Studio 37</title>
+    <title>Studio 37 - Life's a Movie</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -14,9 +14,8 @@
         <nav class="container mx-auto flex justify-between items-center px-4">
             <a href="index.html"><img src="https://live.staticflickr.com/65535/54682452016_5e3a5330ea_b.jpg" alt="Studio 37 Logo" class="h-12 w-auto"></a>
             <div class="hidden md:flex space-x-8">
-                <a href="services.html" class="text-gray-900 font-bold font-oswald">Services</a>
+                <a href="services.html" class="text-gray-700 hover:text-gray-900 font-medium font-oswald">Services</a>
                 <a href="packages.html" class="text-gray-700 hover:text-gray-900 font-medium font-oswald">Packages</a>
-                <a href="portfolio.html" class="text-gray-700 hover:text-gray-900 font-medium font-oswald">Portfolio</a>
                 <a href="blog.html" class="text-gray-700 hover:text-gray-900 font-medium font-oswald">Blog</a>
                 <a href="about.html" class="text-gray-700 hover:text-gray-900 font-medium font-oswald">About Us</a>
                 <a href="contact.html" class="text-gray-700 hover:text-gray-900 font-medium font-oswald">Contact</a>
@@ -24,35 +23,77 @@
         </nav>
     </header>
 
+    <section class="hero-background text-white flex items-center justify-center text-center rounded-b-3xl overflow-hidden shadow-2xl relative">
+        <div class="container mx-auto px-6 py-20 relative z-10">
+            <h1 class="text-6xl md:text-8xl font-extrabold mb-4 drop-shadow-xl">Studio 37</h1>
+            <p class="text-2xl md:text-3xl mb-8 max-w-3xl mx-auto font-medium italic drop-shadow-lg">life's a movie, let us capture your highlight reel</p>
+            <a href="contact.html" class="btn-polaroid">Book Your Session</a>
+        </div>
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+    </section>
+
     <main class="container mx-auto px-6 py-16">
-        <section class="text-center mb-16">
-            <h1 class="text-5xl md:text-6xl font-bold text-gray-800 mb-4">Our Services</h1>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">We provide a comprehensive range of photography services tailored to your personal and professional needs. Click any category to learn more.</p>
+        <section class="text-center py-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Our Photography Services</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-10">We specialize in capturing authentic moments across a wide range of styles and needs.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <a href="services.html#portraits" class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-semibold mb-2">Portraits</h3>
+                    <p>Timeless photos for individuals, couples, and families that capture personality and connection.</p>
+                </a>
+                <a href="services.html#events" class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-semibold mb-2">Events</h3>
+                    <p>Comprehensive coverage for weddings, religious ceremonies, and corporate gatherings.</p>
+                </a>
+                <a href="services.html#art" class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-semibold mb-2">Art</h3>
+                    <p>Professional, gallery-quality photography for artists to showcase their work and build their brand.</p>
+                </a>
+                <a href="services.html#professional" class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-semibold mb-2">Professional</h3>
+                    <p>High-impact imagery for real estate, commercial content, and small business branding.</p>
+                </a>
+            </div>
+            <a href="services.html" class="btn-polaroid">Explore All Services</a>
         </section>
 
-        <!-- Service Category Links -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <a href="service-portraits.html" id="portraits" class="block bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Portraits</h2>
-                <p class="text-gray-700 mb-4">Capturing the essence of individuals, couples, and families with timeless, expressive photos.</p>
-                <span class="font-bold text-amber-600">Learn More &rarr;</span>
-            </a>
-            <a href="service-events.html" id="events" class="block bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Events</h2>
-                <p class="text-gray-700 mb-4">Comprehensive and discreet coverage for weddings, religious ceremonies, and corporate gatherings.</p>
-                <span class="font-bold text-amber-600">Learn More &rarr;</span>
-            </a>
-            <a href="service-art.html" id="art" class="block bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Art</h2>
-                <p class="text-gray-700 mb-4">Professional, gallery-quality photography for artists to showcase their work and build their brand.</p>
-                <span class="font-bold text-amber-600">Learn More &rarr;</span>
-            </a>
-            <a href="service-professional.html" id="professional" class="block bg-white p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Professional</h2>
-                <p class="text-gray-700 mb-4">High-impact imagery for real estate, commercial content, and small business branding.</p>
-                <span class="font-bold text-amber-600">Learn More &rarr;</span>
-            </a>
-        </div>
+        <section class="text-center py-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Our Packages</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-10">Simple, transparent pricing to fit your needs, from a quick session to a full-day event.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-2">Mini Reel</h3>
+                    <p class="text-4xl font-bold my-2">$75</p>
+                    <p>A 15-minute session perfect for a quick update or single look.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-2">Feature Film</h3>
+                    <p class="text-4xl font-bold my-2">$150</p>
+                    <p>Our most popular 30-minute session, ideal for small families or couples.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold mb-2">Epic Saga</h3>
+                    <p class="text-4xl font-bold my-2">$275</p>
+                    <p>A full hour session for multiple looks, locations, or larger groups.</p>
+                </div>
+            </div>
+            <a href="packages.html" class="btn-polaroid">View All Packages</a>
+        </section>
+
+        <section class="text-center py-16 bg-neutral-100 rounded-2xl my-16">
+             <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Unlock Our Portfolio</h2>
+             <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-10">See our complete, categorized portfolio and get a special offer for taking a look.</p>
+            <div class="max-w-2xl mx-auto bg-white p-8 sm:p-10 rounded-xl shadow-2xl border">
+                <h3 class="text-3xl font-bold text-gray-800 mb-3">View Our Full Gallery</h3>
+                <p class="text-gray-600 mb-6">Enter your details to see our complete portfolio and receive a <strong class="text-amber-500">10% OFF coupon</strong> for your first session!</p>
+                <form id="portfolio-unlock-form" class="space-y-4">
+                    <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 border border-gray-300 rounded-lg">
+                    <input type="email" name="email" placeholder="Your Email Address" required class="w-full p-3 border border-gray-300 rounded-lg">
+                    <input type="tel" name="phone" placeholder="Phone Number" required class="w-full p-3 border border-gray-300 rounded-lg">
+                    <button type="submit" class="btn-polaroid w-full">Unlock Now & Get Coupon</button>
+                </form>
+            </div>
+        </section>
     </main>
 
     <footer class="bg-gray-900 text-white py-10 mt-16 rounded-t-3xl">
@@ -61,5 +102,6 @@
         </div>
     </footer>
 
+    <script src="js/main.js"></script>
 </body>
 </html>
