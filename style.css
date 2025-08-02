@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5, h6 {
 /* === UPDATED HERO SECTION BACKGROUND === */
 .hero-background {
     background-image: url('https://live.staticflickr.com/65535/54693157797_2ed5aed7f8_3k.jpg');
-    background-size: cover;
+    background-size: contain;
     background-position: center; 
     background-attachment: fixed;
     min-height: 70vh;
