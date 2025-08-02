@@ -19,9 +19,12 @@ h1, h2, h3, h4, h5, h6 {
 /* === UPDATED HERO SECTION BACKGROUND === */
 .hero-background {
     background-image: url('https://live.staticflickr.com/65535/54694721468_2e1203b0d6_b.jpg');
-    background-size: cover;
+    /* This is the fix: 'contain' makes the whole image fit */
+    background-size: contain;
     background-position: center; 
     background-attachment: fixed;
+    /* This prevents the image from repeating */
+    background-repeat: no-repeat;
     min-height: 70vh;
 }
 
