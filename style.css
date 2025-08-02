@@ -16,11 +16,12 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 0.05em;
 }
 
-/* === UPDATED HERO SECTION BACKGROUND === */
+/* === HERO SECTION ORIENTATION FIX === */
 .hero-background {
     background-image: url('https://live.staticflickr.com/65535/54693157797_9bcf4038e5_3k.jpg');
     background-size: cover;
-    background-position: center;
+    /* This is the fix: Changed from 'center' to 'center top' */
+    background-position: center top; 
     background-attachment: fixed;
     min-height: 70vh;
 }
