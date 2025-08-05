@@ -3,35 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Studio 37</title>
+    <title>Contact Us - Studio 37</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="antialiased">
 
-    <header class="bg-white shadow-md p-5 sticky top-0 z-50">
+    <header class="bg-black shadow-md p-5 sticky top-0 z-50">
         <nav class="container mx-auto flex justify-between items-center px-4">
-            <a href="index.html"><img src="https://live.staticflickr.com/65535/54682452016_5e3a5330ea_b.jpg" alt="Studio 37 Logo" class="h-12 w-auto"></a>
+            <a href="index.html"><img id="site-logo" src="https://placehold.co/200x80/000000/FFFFFF?text=...&font=oswald" alt="Studio 37 Logo" class="h-12 w-auto"></a>
             <div class="hidden md:flex space-x-8">
-                <a href="services.html" class="text-gray-700 hover:text-gray-900 font-medium font-oswald">Services</a>
-                <a href="packages.html" class="text-gray-700 hover:text-gray-900 font-medium font-oswald">Packages</a>
-                <a href="blog.html" class="text-gray-700 hover:text-gray-900 font-medium font-oswald">Blog</a>
-                <a href="about.html" class="text-gray-900 font-bold font-oswald">About Us</a>
-                <a href="contact.html" class="text-gray-700 hover:text-gray-900 font-medium font-oswald">Contact</a>
+                <a href="services.html" class="text-gray-300 hover:text-white font-medium font-oswald">Services</a>
+                <a href="packages.html" class="text-gray-300 hover:text-white font-medium font-oswald">Packages</a>
+                <a href="blog.html" class="text-gray-300 hover:text-white font-medium font-oswald">Blog</a>
+                <a href="about.html" class="text-gray-300 hover:text-white font-medium font-oswald">About Us</a>
+                <a href="contact.html" class="text-white font-bold font-oswald">Contact</a>
             </div>
         </nav>
     </header>
 
     <main class="py-20 md:py-24">
-        <section id="about" class="container mx-auto px-6 text-center max-w-4xl">
-            <h1 class="text-5xl font-bold text-gray-800 mb-10 text-center">About Studio 37</h1>
-            <p class="text-xl text-gray-700 leading-relaxed mb-8">
-                At Studio 37, we are passionate storytellers, using the art of photography to encapsulate your most cherished moments. Our dedication to detail and personalized approach ensures that every frame beautifully reflects your unique narrative. We don't just take pictures; we craft visual legacies.
-            </p>
-            <p class="text-xl text-gray-700 leading-relaxed">
-                With years of expertise and a creative vision, our team works tirelessly to transform fleeting instances into captivating memories. Let us be the lens through which your life's highlight reel is perfectly preserved.
-            </p>
+        <section id="contact" class="container mx-auto px-6 text-center max-w-4xl">
+            <h1 class="text-5xl font-bold text-gray-800 mb-10 text-center">Contact Us</h1>
+            <p class="text-xl text-gray-700 mb-10">Ready to create your cinematic memories? Reach out to us today!</p>
+            
+            <form id="contact-form" class="bg-white p-10 rounded-xl shadow-lg border border-gray-100 mb-12 text-left">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <label for="name" class="block text-gray-700 text-base font-medium mb-3">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required class="w-full p-4 border border-gray-300 rounded-lg bg-gray-50">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-700 text-base font-medium mb-3">Your Email</label>
+                        <input type="email" id="email" name="email" placeholder="john.doe@example.com" required class="w-full p-4 border border-gray-300 rounded-lg bg-gray-50">
+                    </div>
+                </div>
+                <div class="mb-8">
+                    <label for="service" class="block text-gray-700 text-base font-medium mb-3">Service of Interest</label>
+                    <select id="service" name="service" class="w-full p-4 border border-gray-300 rounded-lg bg-gray-50">
+                        <option value="">Select a service</option>
+                        <option value="portrait">Portrait Photography</option>
+                        <option value="event">Event Photography</option>
+                        <option value="art">Art Photography</option>
+                        <option value="professional">Professional Services</option>
+                    </select>
+                </div>
+                <div class="mb-10">
+                    <label for="message" class="block text-gray-700 text-base font-medium mb-3">Your Message</label>
+                    <textarea id="message" name="message" rows="6" placeholder="Tell us about your photography needs..." required class="w-full p-4 border border-gray-300 rounded-lg bg-gray-50"></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn-polaroid">Send Message</button>
+                </div>
+            </form>
         </section>
     </main>
 
@@ -41,5 +66,6 @@
         </div>
     </footer>
 
+    <script src="js/main.js"></script>
 </body>
 </html>
