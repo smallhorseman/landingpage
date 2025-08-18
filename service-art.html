@@ -38,13 +38,23 @@
         </section>
 
         <!-- Flickr Gallery Placeholder -->
-        <section class="text-center mb-16">
-            <h2 class="text-4xl font-bold text-gray-800 mb-8">Art Gallery</h2>
-            <p class="text-lg text-gray-600 mb-8">A selection of our work with talented artists. For our full portfolio, please visit our <a href="portfolio.html" class="text-amber-600 underline">portfolio page</a>.</p>
-            <div class="bg-gray-200 rounded-lg p-8 text-center">
-                <p class="text-gray-600">Your Flickr Album Gallery For Art Will Be Embedded Here.</p>
-            </div>
-        </section>
+     <section class="text-center mb-16">
+
+    <h2 class="text-4xl font-bold text-gray-800 mb-8">Art Gallery</h2>
+
+    <div id="flickr-gallery" data-album-id="72177720328435800" class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+        <div class="bg-gray-200 rounded-lg animate-pulse" style="height: 300px;"></div>
+
+        <div class="bg-gray-200 rounded-lg animate-pulse" style="height: 300px;"></div>
+
+        <div class="bg-gray-200 rounded-lg animate-pulse" style="height: 300px;"></div>
+
+        <div class="bg-gray-200 rounded-lg animate-pulse" style="height: 300px;"></div>
+
+    </div>
+
+</section>
 
         <!-- Booking CTA -->
         <section class="text-center py-16 bg-neutral-100 rounded-2xl">
@@ -58,6 +68,43 @@
         <div class="container mx-auto px-6 text-center">
             <p>&copy; 2025 Studio 37. All rights reserved.</p>
         </div>
+        <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const gallery = document.getElementById('flickr-gallery');
+        const albumId = gallery.getAttribute('data-album-id');
+
+        if (albumId && albumId !== '72177720328435800') {
+            const baseUrl = `${window.location.protocol}//${window.location.host}`;
+            const functionUrl = `${baseUrl}/.netlify/functions/get-flickr-album?album_id=${albumId}`;
+
+            fetch(functionUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Network response was not ok (${response.status})`);
+                    }
+                    return response.json();
+                })
+                .then(photoUrls => {
+                    gallery.innerHTML = ''; // Clear loading skeletons
+                    photoUrls.forEach(url => {
+                        const imgContainer = document.createElement('div');
+                        imgContainer.className = 'rounded-lg shadow-lg overflow-hidden';
+                        const img = document.createElement('img');
+                        img.src = url;
+                        img.className = 'w-full h-full object-cover';
+                        imgContainer.appendChild(img);
+                        gallery.appendChild(imgContainer);
+                    });
+                })
+                .catch(error => {
+                    console.error('Failed to load Flickr gallery:', error);
+                    gallery.innerHTML = '<p class="text-red-500 col-span-full">Could not load photo gallery at this time.</p>';
+                });
+        } else {
+            gallery.innerHTML = '<p class="text-gray-500 col-span-full">Please configure a Flickr Album ID to display photos.</p>';
+        }
+    });
+</script>
     </footer>
     <script src="js/main.js"></script>
 </body>
