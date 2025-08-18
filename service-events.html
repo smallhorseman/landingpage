@@ -77,7 +77,7 @@
         const gallery = document.getElementById('flickr-gallery');
         const albumId = gallery.getAttribute('data-album-id');
 
-        if (albumId && albumId !== 'YOUR_EVENTS_ALBUM_ID') {
+        if (albumId && albumId !== '72177720328435605') {
             const baseUrl = `${window.location.protocol}//${window.location.host}`;
             const functionUrl = `${baseUrl}/.netlify/functions/get-flickr-album?album_id=${albumId}`;
 
