@@ -9,21 +9,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const planContent = document.getElementById('plan-content');
     const errorMessage = document.getElementById('error-message');
 
+    // Set the file size limit to 4.5 MB
+    const MAX_FILE_SIZE = 4.5 * 1024 * 1024; 
+
     let audioFile = null;
 
     if (uploadContainer) {
-        // Handle file selection
         uploadContainer.addEventListener('click', () => audioFileInput.click());
         audioFileInput.addEventListener('change', handleFileSelect);
-
-        // Handle drag and drop
-        uploadContainer.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            uploadContainer.classList.add('border-blue-500');
-        });
-        uploadContainer.addEventListener('dragleave', () => {
-            uploadContainer.classList.remove('border-blue-500');
-        });
+        // Drag and drop handlers...
+        uploadContainer.addEventListener('dragover', (e) => { e.preventDefault(); uploadContainer.classList.add('border-blue-500'); });
+        uploadContainer.addEventListener('dragleave', () => { uploadContainer.classList.remove('border-blue-500'); });
         uploadContainer.addEventListener('drop', (e) => {
             e.preventDefault();
             uploadContainer.classList.remove('border-blue-500');
@@ -37,7 +33,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function handleFileSelect(event) {
         const file = event.target.files[0];
-        if (file && file.type.startsWith('audio/')) {
+        
+        if (!file) return;
+
+        // ** NEW: Check the file size **
+        if (file.size > MAX_FILE_SIZE) {
+            audioFile = null;
+            uploadText.textContent = 'Click or drag to upload your audio file.';
+            fileNameDisplay.textContent = '';
+            generatePlanBtn.disabled = true;
+            errorMessage.textContent = `Error: Audio file is too large. Please upload a file smaller than 4.5 MB.`;
+            return; // Stop the function here
+        }
+
+        if (file.type.startsWith('audio/')) {
             audioFile = file;
             uploadText.textContent = 'File selected:';
             fileNameDisplay.textContent = file.name;
@@ -68,37 +77,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const response = await fetch('/.netlify/functions/generate-plan', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        audio: base64Audio,
-                        mimeType: mimeType,
-                    }),
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ audio: base64Audio, mimeType: mimeType }),
                 });
 
-                // If the response is not OK, handle it as an error
                 if (!response.ok) {
-                    // Try to get a more specific error message from the response body
                     const errorText = await response.text();
                     try {
-                        // See if the error is in JSON format
                         const errorData = JSON.parse(errorText);
                         throw new Error(errorData.message || 'An unknown server error occurred.');
                     } catch (e) {
-                        // If it's not JSON, use the raw text. This could be a timeout message.
                         throw new Error(errorText || `Server responded with status: ${response.status}`);
                     }
                 }
 
                 const result = await response.json();
                 
-                // Simple markdown to HTML conversion
                 let htmlResult = result.plan.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
                 htmlResult = htmlResult.replace(/\n/g, '<br>');
                 htmlResult = htmlResult.replace(/- (.*?)(<br>|$)/g, '<ul><li class="ml-4">$1</li></ul>');
                 htmlResult = htmlResult.replace(/<\/ul><br><ul>/g, '');
-
 
                 planContent.innerHTML = htmlResult;
 
