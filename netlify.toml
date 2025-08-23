@@ -1,0 +1,8 @@
+# This is a configuration file for Netlify.
+# It tells Netlify how to build and deploy your site.
+
+[functions]
+  # This increases the timeout for a specific function.
+  # The default is 10 seconds. We'll set it to 30.
+  [functions."generate-plan"]
+    timeout = 30
