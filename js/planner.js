@@ -77,9 +77,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     }),
                 });
 
+                // If the response is not OK, handle it as an error
                 if (!response.ok) {
-                    const errorData = await response.json();
-                    throw new Error(errorData.message || 'An error occurred while generating the plan.');
+                    // Try to get a more specific error message from the response body
+                    const errorText = await response.text();
+                    try {
+                        // See if the error is in JSON format
+                        const errorData = JSON.parse(errorText);
+                        throw new Error(errorData.message || 'An unknown server error occurred.');
+                    } catch (e) {
+                        // If it's not JSON, use the raw text. This could be a timeout message.
+                        throw new Error(errorText || `Server responded with status: ${response.status}`);
+                    }
                 }
 
                 const result = await response.json();
@@ -95,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             } catch (error) {
                 console.error('Error generating plan:', error);
-                errorMessage.textContent = `Failed to generate the plan. ${error.message}`;
+                errorMessage.textContent = `Failed to generate the plan. Error: ${error.message}`;
             } finally {
                 loader.classList.add('hidden');
                 generatePlanBtn.disabled = false;
