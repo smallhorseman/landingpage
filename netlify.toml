@@ -1,3 +1,4 @@
+
 # This is a configuration file for Netlify.
 # It tells Netlify how to build and deploy your site.
 
@@ -6,3 +7,10 @@
   # The default is 10 seconds. We'll set it to 30.
   [functions."generate-plan"]
     timeout = 30
+[[plugins]]
+package = "@netlify/plugin-sitemap"
+
+  [plugins.inputs]
+  # You can add optional configuration here if needed
+  # For example, to exclude a certain page:
+  # exclude = ["/admin/**"]
